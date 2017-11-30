@@ -1,0 +1,93 @@
+.button {
+  font-size: .9em !important;
+  text-transform: uppercase;
+  padding: 1.5rem 1rem;
+}
+
+.is-transparent {
+  background-color: transparent;
+}
+
+.is-first {
+  order: 1;
+}
+
+.is-second {
+  order: 2;
+}
+
+.is-third {
+  order: 3;
+}
+
+.is-first-widescreen  {
+  @media screen and (min-width: $widescreen) {
+    order: 1;
+  }
+}
+
+.is-second-widescreen  {
+  @media screen and (min-width: $widescreen) {
+    order: 2;
+  }
+}
+
+.is-third-widescreen {
+  @media screen and (min-width: $widescreen) {
+    order: 3;
+  }
+}
+
+.is-first-desktop {
+  @media screen and (min-width: $desktop) {
+    order: 1;
+  }
+}
+
+.is-second-desktop {
+  @media screen and (min-width: $desktop) {
+    order: 2;
+  }
+}
+
+.is-third-desktop {
+  @media screen and (min-width: $desktop) {
+    order: 3;
+  }
+}
+
+.is-first-tablet {
+  @media screen and (min-width: $tablet) {
+    order: 1;
+  }
+}
+
+.is-second-tablet {
+  @media screen and (min-width: $tablet) {
+    order: 2;
+  }
+}
+
+.is-third-tablet {
+  @media screen and (min-width: $tablet) {
+    order: 3;
+  }
+}
+
+.is-centered {
+  .image {
+    justify-self: center;
+    text-align: center;
+    display: inline-block;
+    overflow: hidden;
+  }
+}
+
+.tablet-show { display: none; }
+@media screen and (max-width: $tablet){
+  .tablet-hide { display: none; }
+  .tablet-show { display: block; }
+}
+@media screen and (max-width: 500px){
+  .mobile-hide { display: none; }
+}

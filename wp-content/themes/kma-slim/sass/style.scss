@@ -1,0 +1,30 @@
+/*!
+Theme Name:         KMA Slim
+Theme URI:          https://keriganmarketing.com
+Description:        Minimal theme based on Bulma
+Version:            1.0.0
+Author:             Bryan Baird
+Author URI:         https://keriganmarketing.com
+Text Domain:        kmaslim
+
+License:            MIT License
+License URI:        http://opensource.org/licenses/MIT
+*/
+
+// Fonts
+@import "fonts.scss";
+
+// Set Variables
+@import "variables.sass";
+
+//Bulma
+@import "../node_modules/bulma/bulma";  ;
+
+// WP Core
+@import "core.scss";
+
+//Helpers
+@import "helpers.scss";
+
+// Theme
+@import "theme.scss";

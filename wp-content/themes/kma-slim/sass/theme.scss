@@ -1,0 +1,269 @@
+// Theme Specific Styles
+
+// Full page Layout
+html {
+  height: 100%;
+}
+
+body {
+  height: auto !important;
+  min-height: 100%;
+  overflow-x: initial;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+
+  .section-wrapper {
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  .site-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    position: relative;
+
+    @media screen and (min-width:768px) and (max-width: 1084px){
+      .container {
+        padding: 0 2rem;
+      }
+    }
+
+    @media screen and (min-width: 1084px){
+      .container {
+        max-width: 1024px;
+        width: 1024px;
+      }
+    }
+  }
+
+  .site-wrapper.full-height {
+    height: 100vh;
+  }
+
+}
+
+//Sticky Header
+#top {
+  width: 100%;
+  position: absolute;
+  z-index: 3;
+  -webkit-transition: all linear .25s;
+  -moz-transition: all linear .25s;
+  -ms-transition: all linear .25s;
+  -o-transition: all linear .25s;
+  transition: all linear .25s;
+
+  @media screen and (min-width: $desktop) {
+    position: fixed;
+  }
+
+  .top-one {
+    background-color: #FFF;
+  }
+
+
+  .navbar {
+    background-color: transparent;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and (max-width:767px){
+      flex-direction: column;
+    }
+
+    @media screen and (min-width: $desktop) {
+      background-color: transparent;
+    }
+
+    .navbar-brand {
+      min-height: 100%;
+      .logo {
+        padding: .5rem 1rem;
+        height:157px;
+        width:227px;
+        display: block;
+        -webkit-transition: all linear .25s;
+        -moz-transition: all linear .25s;
+        -ms-transition: all linear .25s;
+        -o-transition: all linear .25s;
+        transition: all linear .25s;
+
+        @media screen and (max-width:767px) {
+          width: 200px;
+          height: auto;
+        }
+
+        img {
+          display: block;
+        }
+      }
+
+    }
+
+    .navbar-item {
+      padding: .5rem;
+      img {
+        max-height: 2.75rem;
+      }
+      a.menu-item {
+        font-size: 1em;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      .navbar-link::after {
+        content: "";
+        display: none;
+      }
+
+      .social svg {
+        width: 28px;
+        margin: .1rem .15rem;
+      }
+
+    }
+
+    .navbar-item a.menu-item:hover, a.current_page_item,
+    .navbar-item a.navbar-link.is-active,
+    .navbar-item.has-dropdown:hover .navbar-link,
+    .navbar-item.has-dropdown.is-active .navbar-link,
+    .navbar-item.has-dropdown:hover .navbar-link {
+      background-color: transparent;
+    }
+
+    div#main-menu {
+      display: none;
+
+      @media screen and (min-width: $desktop) {
+        display: flex;
+      }
+    }
+
+    .navbar-end {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      @media screen and (max-width:767px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .navbar-top-row {
+    font-size: .9em;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    div {
+      color:#999;
+    }
+    a {
+      color:#999;
+      text-transform: uppercase;
+    }
+
+  }
+
+  .top-two {
+    background-color: rgba(85,61,111,.8);
+
+    .navbar-item {
+      padding: .5rem;
+      a.menu-item {
+        color: #FFF;
+        padding:1rem .5rem;
+      }
+
+      .navbar-dropdown {
+        top: 92%;
+        padding: .5rem;
+        min-width: 200px;
+        border-top: 6px solid $primary;
+        border-radius: 0;
+        color: $primary;
+
+        a.menu-item {
+          color: $primary;
+          padding: .5rem;
+        }
+        a.menu-item:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (min-width: $desktop) {
+  .scrolling #top {
+    background-position: center top;
+    background-size: cover;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+    .logo {
+      height: 120px !important;
+      width: 182.36px !important;
+    }
+  }
+}
+
+//Middle section
+#mid {
+  position: relative;
+  flex: 1 0 auto;
+  z-index: 2;
+
+  //sections
+  .section {
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    padding: 2.5rem 0;
+    @media screen and (min-width: $tablet) {
+      padding: 3rem 0 6rem;
+    }
+  }
+
+}
+
+
+
+#bot {
+  position: relative;
+  z-index: 1;
+  background-color: #9fc3cc;
+  padding: 2rem 0;
+  @media screen and (min-width: $tablet){
+    padding: 3rem 0 3rem;
+  }
+}
+
+#bot-bot {
+  padding:.5rem 0;
+  background-color: #484848;
+  p {
+    color: #FFF;
+    font-size: .8em;
+    a {
+      color: #FFF;
+      text-decoration: underline;
+    }
+
+    .siteby {
+      svg {
+        height: 11px;
+      }
+    }
+  }
+}

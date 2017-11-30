@@ -1,0 +1,11 @@
+.idea/
+.DS_Store
+wp-content/themes/kma-slim/node_modules/
+wp-content/themes/kma-slim/vendor/
+wp-config.php
+tags
+.user.ini
+php.ini
+*error_log
+*/cache/
+wp-content/uploads/

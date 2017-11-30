@@ -1,0 +1,130 @@
+/* WP Core Template Styles */
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content .tabs li {
+  margin-top: 0 !important;
+}
+
+.content .tabs ul {
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+}
+
+.slider,
+.slides,
+.slide {
+  display: block;
+  height:100vh;
+  -webkit-transition: opacity linear 1.5s;
+  transition:opacity linear 1.5s;
+  background-size: cover;
+}
+
+.slider-right,
+.slider-left {
+  position: absolute;
+  top: 50%;
+  z-index: 30;
+}
+
+.slider-right {
+  right:0;
+}
+
+.slide {
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  transition-duration: 2.5s;
+  opacity:0;
+  z-index: -1;
+
+  .container {
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .slide-content {
+      width:100%;
+    }
+  }
+}
+
+.slide.active {
+  opacity:1;
+  z-index: 0;
+}
+
+/****
+Social Media
+ ***/
+
+.social {
+  text-align: center;
+
+  svg {
+    width: 40px;
+    margin: .1rem .25rem;
+  }
+}
