@@ -1,7 +1,5 @@
 .button {
-  font-size: .9em !important;
   text-transform: uppercase;
-  padding: 1.5rem 1rem;
 }
 
 .is-transparent {
@@ -20,20 +18,20 @@
   order: 3;
 }
 
-.is-first-widescreen  {
-  @media screen and (min-width: $widescreen) {
+.is-first-tablet {
+  @media screen and (min-width: $tablet) {
     order: 1;
   }
 }
 
-.is-second-widescreen  {
-  @media screen and (min-width: $widescreen) {
+.is-second-tablet {
+  @media screen and (min-width: $tablet) {
     order: 2;
   }
 }
 
-.is-third-widescreen {
-  @media screen and (min-width: $widescreen) {
+.is-third-tablet {
+  @media screen and (min-width: $tablet) {
     order: 3;
   }
 }
@@ -56,20 +54,20 @@
   }
 }
 
-.is-first-tablet {
-  @media screen and (min-width: $tablet) {
+.is-first-widescreen  {
+  @media screen and (min-width: $widescreen) {
     order: 1;
   }
 }
 
-.is-second-tablet {
-  @media screen and (min-width: $tablet) {
+.is-second-widescreen  {
+  @media screen and (min-width: $widescreen) {
     order: 2;
   }
 }
 
-.is-third-tablet {
-  @media screen and (min-width: $tablet) {
+.is-third-widescreen {
+  @media screen and (min-width: $widescreen) {
     order: 3;
   }
 }
@@ -80,6 +78,18 @@
     text-align: center;
     display: inline-block;
     overflow: hidden;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .has-text-centered-desktop {
+    text-align: center;
+  }
+  .has-text-left-desktop {
+    text-align: left;
+  }
+  .has-text-right-desktop {
+    text-align: right;
   }
 }
 

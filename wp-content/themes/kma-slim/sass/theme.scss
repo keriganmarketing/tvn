@@ -222,6 +222,10 @@ body {
   flex: 1 0 auto;
   z-index: 2;
 
+  .sticky-header-pad {
+    padding-top: 160px;
+  }
+
   //sections
   .section {
     clear: both;
@@ -233,6 +237,59 @@ body {
     @media screen and (min-width: $tablet) {
       padding: 3rem 0 6rem;
     }
+  }
+
+  .home-header {
+    background-image: url('/wp-content/themes/kma-slim/img/header-image.png');
+    background-position: center;
+    background-size: cover;
+
+    .headline {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      h1 {
+        font-weight: $weight-bold;
+        color:#FFF;
+        text-shadow: 0 0 2px rgba(0,0,0,.5);
+        font-size: 3em;
+
+        em {
+          font-weight: $weight-bold;
+          font-style: italic;
+        }
+      }
+    }
+  }
+
+  .home-modules {
+    padding-top: 0;
+    margin-top: -3rem;
+  }
+
+  .home-module {
+    margin:0 1.25rem 2.5rem;
+    border-radius: .75rem;
+    border:0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: #fbf8f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2 {
+      font-weight: $weight-bold;
+      color: $primary;
+      font-size: $size-5;
+    }
+
+    .card-cta {
+      padding: 0 0 2rem;
+    }
+
   }
 
 }

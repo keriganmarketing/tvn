@@ -22,7 +22,7 @@ use Includes\Modules\Navwalker\BulmaNavwalker;
                                 <img src="<?php echo get_template_directory_uri() . '/img/logo.png'; ?>" alt="<?= bloginfo(); ?>" >
                             </a>
                         </div>
-                        <div class="navbar-end mini-nav">
+                        <div class="navbar-end mini-nav is-hidden-mobile">
                             <div class="navbar-item">
                                 <a href="/">Home</a>
                             </div>
