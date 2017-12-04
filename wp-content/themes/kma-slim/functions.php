@@ -23,6 +23,10 @@ if(is_admin()) {
 
 $layouts = new Layouts();
 $layouts->addPageHeadlines();
+$layouts->createSidebarSelector();
+
+//add a sidebar type here.
+//$layouts->addSidebar('Some Name');
 
 add_action( 'after_setup_theme', function() {
 

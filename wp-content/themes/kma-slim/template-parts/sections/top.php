@@ -13,6 +13,9 @@ use Includes\Modules\Navwalker\BulmaNavwalker;
 <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'kmaslim'); ?></a>
 <div id="app" :class="{'modal-open': modalOpen }">
     <div :class="['site-wrapper', {'full-height': footerStuck}]">
+        <div class="top-top is-hidden-desktop">
+            <a href="/" >Home</a> | <a href="/contact/">Contact</a>
+        </div>
         <div id="top" class="header">
             <div class="top-one">
                 <div class="container">

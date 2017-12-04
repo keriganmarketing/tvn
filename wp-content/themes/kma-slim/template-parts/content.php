@@ -18,8 +18,7 @@ include(locate_template('template-parts/sections/top.php'));
 ?>
 <div id="mid" >
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <div class="section top-section support-header" >
-        </div>
+        <div class="sticky-header-pad"></div>
         <section id="content" class="section support">
             <div class="container">
                 <h1 class="title"><?php echo $headline; ?></h1>
@@ -41,11 +40,6 @@ include(locate_template('template-parts/sections/top.php'));
                                     wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'kmaslim' ), array( 'span' => array( 'class' => array() ) ) ),
                                     the_title( '<span class="screen-reader-text">"', '"</span>', false )
                                 ) );
-
-                                wp_link_pages( array(
-                                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'kmaslim' ),
-                                    'after'  => '</div>',
-                                ) );
                                 ?>
                             </div>
                 <?php if($hasSidebars){ ?>
@@ -59,18 +53,5 @@ include(locate_template('template-parts/sections/top.php'));
         </section>
     </article>
 
-    <div class="section connect">
-        <div class="container">
-            <?php include(locate_template('template-parts/sections/connect.php')); ?>
-        </div>
-    </div>
-
-    <?php if(!$hasSidebars){ ?>
-        <div class="section subscribe">
-            <div class="container">
-                <?php include(locate_template('template-parts/partials/subscribe.php')); ?>
-            </div>
-        </div>
-    <?php } ?>
 </div>
 <?php include(locate_template('template-parts/sections/bot.php')); ?>

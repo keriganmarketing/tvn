@@ -37,8 +37,12 @@ body {
 
     @media screen and (min-width: 1084px){
       .container {
-        max-width: 1024px;
-        width: 1024px;
+        max-width: 990px;
+        width: 990px;
+      }
+      .container.pad {
+        max-width: 894px;
+        width: 894px;
       }
     }
   }
@@ -47,19 +51,49 @@ body {
     height: 100vh;
   }
 
+  .button {
+    font-weight:bold;
+  }
+
+}
+
+//Top mini-nav
+.top-top {
+  background-color: #FAF7F2;
+  text-align: center;
+  color: #868686;
+
+  a {
+    display: inline-block;
+    padding:.5rem;
+    color: #868686;
+    font-size: 12px;
+  }
 }
 
 //Sticky Header
 #top {
   width: 100%;
-  position: absolute;
+  position: relative;
   z-index: 3;
   -webkit-transition: all linear .25s;
   -moz-transition: all linear .25s;
   -ms-transition: all linear .25s;
   -o-transition: all linear .25s;
   transition: all linear .25s;
+  @media screen and (max-width: $desktop) {
+    width:100%;
+    text-align: center;
 
+    .navbar-start {
+      padding: 1rem 0 0;
+    }
+
+    .navbar-end {
+      justify-content: center !important;
+      padding: .5rem 0 1.5rem;
+    }
+  }
   @media screen and (min-width: $desktop) {
     position: fixed;
   }
@@ -140,10 +174,16 @@ body {
     }
 
     div#main-menu {
-      display: none;
+      //display: none;
 
       @media screen and (min-width: $desktop) {
         display: flex;
+      }
+
+      @media screen and (max-width: $desktop) {
+        .navbar-dropdown {
+          display: none;
+        }
       }
     }
 
@@ -174,13 +214,26 @@ body {
   }
 
   .top-two {
-    background-color: rgba(85,61,111,.8);
+    background-color: #410080;
+    @media screen and (min-width: $desktop) {
+      background-color: rgba(65, 0, 128, .5);
+
+      .navbar-bottom-row {
+        padding: 1rem 0;
+      }
+    }
 
     .navbar-item {
-      padding: .5rem;
+      padding: 0;
+      @media screen and (min-width: $desktop) {
+        padding: .5rem;
+      }
       a.menu-item {
         color: #FFF;
-        padding:1rem .5rem;
+        padding: .5rem;
+        @media screen and (min-width: $desktop) {
+          padding: 1rem .5rem;
+        }
       }
 
       .navbar-dropdown {
@@ -222,8 +275,10 @@ body {
   flex: 1 0 auto;
   z-index: 2;
 
-  .sticky-header-pad {
-    padding-top: 160px;
+  @media screen and (min-width: $desktop) {
+    .sticky-header-pad {
+      padding-top: 160px;
+    }
   }
 
   //sections
@@ -235,7 +290,7 @@ body {
     background-color: transparent;
     padding: 2.5rem 0;
     @media screen and (min-width: $tablet) {
-      padding: 3rem 0 6rem;
+      padding: 3rem 0;
     }
   }
 
@@ -244,16 +299,40 @@ body {
     background-position: center;
     background-size: cover;
 
+    @media screen and (min-width: $desktop) {
+      padding: 1.5rem;
+    }
+    @media screen and (min-width: $widescreen) {
+      padding: 3.5rem 0 5.5rem;
+    }
+    @media screen and (min-width: $fullhd) {
+      padding: 5rem 0 7rem;
+    }
+
+    .video-holder {
+      text-align: center;
+      justify-content: center;
+    }
+
     .headline {
       height: 100%;
       display: flex;
       align-items: center;
+      width: 100%;
 
       h1 {
         font-weight: $weight-bold;
         color:#FFF;
         text-shadow: 0 0 2px rgba(0,0,0,.5);
-        font-size: 3em;
+        font-size: 2.5em;
+        width: 100%;
+
+        @media screen and (min-width: $desktop) {
+          padding: 3rem 1.5rem;
+          text-align: left;
+          font-size: 3rem;
+          line-height: 1.3em;
+        }
 
         em {
           font-weight: $weight-bold;
@@ -263,13 +342,15 @@ body {
     }
   }
 
-  .home-modules {
-    padding-top: 0;
-    margin-top: -3rem;
+  @media screen and (min-width: $desktop) {
+    .home-modules {
+      padding-top: 0;
+      margin-top: -3rem;
+    }
   }
 
   .home-module {
-    margin:0 1.25rem 2.5rem;
+    margin:0 1.5rem 1rem;
     border-radius: .75rem;
     border:0;
     -webkit-box-shadow: none;
@@ -279,6 +360,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media screen and (min-width: $desktop) {
+      margin:0 1.25rem 2.5rem;
+    }
 
     h2 {
       font-weight: $weight-bold;
@@ -290,6 +375,42 @@ body {
       padding: 0 0 2rem;
     }
 
+  }
+
+  .doctor-bio {
+    background-color: #547289;
+    align-items: center;
+
+    //@media screen and (max-width: $desktop) {
+      .doctor-bio-container,
+      .doctor-photo-container {
+        padding: 1.5rem;
+
+        h2 {
+          font-size: 29px;
+          margin-bottom:2rem;
+        }
+        p {
+          line-height: 2em;
+        }
+        a.button {
+          margin-top: 2rem;
+        }
+      }
+    //}
+
+    .doctor-bio-container {
+      display: flex;
+      flex-direction: column;
+      justify-self: center;
+      height: 100%;
+      justify-content: center;
+    }
+
+    p, h2,
+    .is-transparent {
+      color: #FFF;
+    }
   }
 
 }
