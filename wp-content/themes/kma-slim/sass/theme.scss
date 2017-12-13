@@ -293,7 +293,6 @@ body {
       padding: 3rem 0;
     }
   }
-
   .home-header {
     background-image: url('/wp-content/themes/kma-slim/img/header-image.png');
     background-position: center;
@@ -308,7 +307,6 @@ body {
     @media screen and (min-width: $fullhd) {
       padding: 5rem 0 7rem;
     }
-
     .video-holder {
       text-align: center;
       justify-content: center;
@@ -444,4 +442,15 @@ body {
       }
     }
   }
+}
+
+.cta {
+  color: #410082;
+  font-size: 28px;
+  font-family: Helvetica, sans-serif;
+  padding: 30px 0;
+}
+.cta-button {
+  padding: 20px;
+  margin-bottom: 20px;
 }

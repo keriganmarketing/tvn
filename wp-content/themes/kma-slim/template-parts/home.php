@@ -6,7 +6,7 @@
  * @version 1.2
  */
 $headline = ($post->page_information_headline != '' ? $post->page_information_headline : $post->post_title);
-$subhead = ($post->page_information_subhead != '' ? $post->page_information_subhead : '');
+$subhead  = ($post->page_information_subhead != '' ? $post->page_information_subhead : '');
 
 include(locate_template('template-parts/sections/top.php'));
 ?>
@@ -33,7 +33,6 @@ include(locate_template('template-parts/sections/top.php'));
                 </div>
             </div>
         </div>
-
         <div class="section home-modules">
             <div class="container pad">
                 <div class="columns is-8 is-multiline is-centered">
@@ -54,7 +53,6 @@ include(locate_template('template-parts/sections/top.php'));
                 </div>
             </div>
         </div>
-
         <div class="section doctor-bio">
             <div class="container pad">
                 <div class="columns is-8 is-multiline is-centered">
@@ -73,7 +71,7 @@ include(locate_template('template-parts/sections/top.php'));
                 </div>
             </div>
         </div>
-
     </article>
 </div>
+<?php include(locate_template('template-parts/partials/homepage-cta.php')); ?>
 <?php include(locate_template('template-parts/sections/bot.php')); ?>
