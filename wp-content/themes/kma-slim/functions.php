@@ -11,6 +11,7 @@ use Includes\Modules\Helpers\CleanWP;
 use Includes\Modules\Layouts\Layouts;
 use Includes\Modules\Helpers\PageField;
 use Includes\Modules\Social\SocialSettingsPage;
+use KeriganSolutions\CPT\CustomPostType;
 
 require('vendor/autoload.php');
 
@@ -24,9 +25,7 @@ if(is_admin()) {
 $layouts = new Layouts();
 $layouts->addPageHeadlines();
 $layouts->createSidebarSelector();
-
-//add a sidebar type here.
-//$layouts->addSidebar('Some Name');
+$layouts->addSidebar('Featured Image Sidebar');
 
 add_action( 'after_setup_theme', function() {
 
@@ -61,3 +60,14 @@ add_action( 'after_setup_theme', function() {
 add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_script( 'scripts' );
 } );
+
+function getPageChildren($pageName)
+{
+    $wpQuery = new WP_Query();
+    $allPages = $wpQuery->query(array('post_type' => 'page', 'posts_per_page' => '-1'));
+
+    $parent = get_page_by_title( $pageName );
+    $children = get_page_children( $parent->ID, $allPages);
+
+    return $children;
+}

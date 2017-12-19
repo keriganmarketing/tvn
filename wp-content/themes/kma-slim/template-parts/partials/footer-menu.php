@@ -3,37 +3,43 @@ use Includes\Modules\Social\SocialSettingsPage;
 ?>
 <div class="columns">
     <div class="column is-4">
-        <p class="menu-heading">
-            ABOUT US
-        </p>
-            <a href="/meet-dr-rifai" class="footer-submenu-item">Meet Dr. Rifai</a>
-            <a href="/value-of-virtual-consults" class="footer-submenu-item mb-20">Value of Virtural Consults</a>
-        <p class="menu-heading is-uppercase">
-            SPECIALTIES
-        </p>
-            <a href="#" class="footer-submenu-item">Hypertension</a>
-            <a href="#" class="footer-submenu-item">Diabetes</a>
-            <a href="#" class="footer-submenu-item">Kidney Disease</a>
-            <a href="#" class="footer-submenu-item">Kidney Transplant</a>
-            <a href="#" class="footer-submenu-item">Dialysis</a>
-            <a href="#" class="footer-submenu-item mb-20">Congestive Heart Failure (CHF)</a>
+        <div class="footer-menu-section">
+            <p class="menu-heading">
+                ABOUT US
+            </p>
+            <?php foreach(getPageChildren('About Us') as $child){ ?>
+                <a href="<?= get_permalink($child->ID); ?>" class="footer-submenu-item"><?= $child->post_title; ?></a>
+            <?php } ?>
+        </div>
+
+        <div class="footer-menu-section">
+            <p class="menu-heading is-uppercase">
+                SPECIALTIES
+            </p>
+            <?php foreach(getPageChildren('Conditions') as $child){ ?>
+                <a href="<?= get_permalink($child->ID); ?>" class="footer-submenu-item"><?= $child->post_title; ?></a>
+            <?php } ?>
+        </div>
+
     </div>
     <div class="column is-4">
-        <p class="menu-heading is-uppercase">
-            PHYSICIAN RESOURCES
-        </p>
-            <a href="#" class="footer-submenu-item">PCP</a>
-            <a href="#" class="footer-submenu-item">Nephrologists</a>
-            <a href="#" class="footer-submenu-item">Cardiologists</a>
-            <a href="#" class="footer-submenu-item">Vascular Surgeons</a>
-            <a href="#" class="footer-submenu-item mb-20">Radiologists</a>
-        <p class="menu-heading is-uppercase">
-            PATIENT RESOURCES
-        </p>
-            <a href="#" class="footer-submenu-item">Renal Nutrition</a>
-            <a href="#" class="footer-submenu-item">Videos</a>
-            <a href="#" class="footer-submenu-item">Health Links</a>
-            <a href="#" class="footer-submenu-item">Brochures</a>
+        <div class="footer-menu-section">
+            <p class="menu-heading is-uppercase">
+                PHYSICIAN RESOURCES
+            </p>
+            <?php foreach(getPageChildren('Physician Resources') as $child){ ?>
+                <a href="<?= get_permalink($child->ID); ?>" class="footer-submenu-item"><?= $child->post_title; ?></a>
+            <?php } ?>
+        </div>
+
+        <div class="footer-menu-section">
+            <p class="menu-heading is-uppercase">
+                PATIENT RESOURCES
+            </p>
+            <?php foreach(getPageChildren('Patient Resources') as $child){ ?>
+                <a href="<?= get_permalink($child->ID); ?>" class="footer-submenu-item"><?= $child->post_title; ?></a>
+            <?php } ?>
+        </div>
     </div>
     <div class="column is-4">
         <a href="#" class="button white-button is-uppercase mb-20">Make a payment</a>
@@ -43,9 +49,9 @@ use Includes\Modules\Social\SocialSettingsPage;
         <p class="footer-submenu-item mb-20">
             PO Box 1750, <br>
             Lynn Haven, FL 32444 <br>
-            Email: <a href"mailto:thevirtualnephrologist@gmail.com">thevirtualnephrologist@gmail.com</a>
+            Email: <a href="mailto:thevirtualnephrologist@gmail.com">thevirtualnephrologist@gmail.com</a>
         </p>
-        <div class="social has-text-left">
+        <div class="social">
             <p class="menu-heading mb-5">CONNECT:</p>
             <?php
             $socialLinks = new SocialSettingsPage();

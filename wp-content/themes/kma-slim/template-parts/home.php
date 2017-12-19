@@ -17,8 +17,9 @@ include(locate_template('template-parts/sections/top.php'));
             <div class="container">
                 <div class="columns is-multiline">
                     <div class="column is-6 video-holder is-first-desktop">
-                        <div class="home-video-container">
-                            <img src="<?= get_template_directory_uri() . '/img/video.png'; ?>" >
+                        <div class="home-video-container image is-16by9">
+                            <iframe width="483" height="243" src="https://www.youtube.com/embed/CWmyfg_sy18?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+<!--                            <img src="--><?//= get_template_directory_uri() . '/img/video.png'; ?><!--" >-->
                         </div>
                     </div>
                     <div class="column is-6 home-headline has-text-centered has-text-left-desktop">
@@ -35,17 +36,16 @@ include(locate_template('template-parts/sections/top.php'));
         </div>
         <div class="section home-modules">
             <div class="container pad">
-                <div class="columns is-8 is-multiline is-centered">
-                <?php //TODO: make this come from the sub-pages of Conditions get_pages($attr)
-                for($i = 0; $i < 6; $i++){ ?>
+                <div class="columns is-8 is-multiline is-centered support-modules">
+                <?php foreach(getPageChildren('Conditions') as $child){ ?>
                 <div class="column is-4 has-text-centered">
                     <div class="card home-module">
                         <div class="card-content">
-                            <h2 class="title">Some Name</h2>
-                            <p>Id has tota impedit disputationi, no fugit facilis mel. Facer quaestio prodesset pri te, essent rationibus ea vis. Nisl utroque sed ex. Cu agam ubique mei, ad sit ferri animal. </p>
+                            <h2 class="title"><?= $child->post_title; ?></h2>
+                            <p><?= $child->page_information_preview_text; ?></p>
                         </div>
                         <div class="card-cta">
-                            <a href="#" class="button is-small" >Read More</a>
+                            <a href="<?= get_permalink($child->ID); ?>" class="button is-small" >Read More</a>
                         </div>
                     </div>
                 </div>
@@ -73,5 +73,5 @@ include(locate_template('template-parts/sections/top.php'));
         </div>
     </article>
 </div>
-<?php include(locate_template('template-parts/partials/homepage-cta.php')); ?>
+<?php include(locate_template('template-parts/partials/page-cta.php')); ?>
 <?php include(locate_template('template-parts/sections/bot.php')); ?>

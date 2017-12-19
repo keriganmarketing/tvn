@@ -1,4 +1,4 @@
-<div class="column is-full has-text-centered">
+<div class="column is-full has-text-centered page-cta">
     <p class="cta">
         Your health <em>the most</em> valuable asset you have &mdash;
         <br/>

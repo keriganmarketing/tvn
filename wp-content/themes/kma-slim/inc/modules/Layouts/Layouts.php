@@ -22,8 +22,9 @@ class Layouts
         $page->addMetaBox(
             'Page Information',
             array(
-                'Headline' => 'text',
-                'Subhead'  => 'text'
+                'Headline'     => 'text',
+                'Subhead'      => 'text',
+                'Preview Text' => 'textarea'
             )
         );
     }
