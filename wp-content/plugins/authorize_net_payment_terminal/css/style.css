@@ -1,0 +1,173 @@
+/*
+#******************************************************************************
+#                      Authorize.net Payment Terminal Wordpress
+#
+#	Author: Convergine.com
+#	http://www.convergine.com
+#	Version: 1.3
+#	Released: December 16, 2014
+#
+#******************************************************************************
+*/
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Roboto-Regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Roboto-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Roboto-Regular.svg#f4ba68a9596ca53347cecdb9c6e48d01') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Medium.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Roboto-Medium.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Roboto-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Roboto-Medium.svg#9e4baab57ed09c2dd1f3a56f2a128453') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  500;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Black.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Roboto-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Roboto-Black.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Roboto-Black.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Roboto-Black.svg#a75be943f9c20b4164283fbba83ca04e') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  900;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Roboto-Bold.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Roboto-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Roboto-Bold.svg#b49e654214c0ade376e714f6d9c78d72') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  700;
+}
+
+#anpt_services_price{ width:65px;}
+
+
+.anpt_newpay_button.buttondesign0 { height:40px; line-height:40px; text-align:center; background:#000; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block; padding:0 26px 0 25px; position:relative;}
+.anpt_newpay_button.buttondesign0.corner1{ border-radius:10px;}
+.anpt_newpay_button.buttondesign0.corner2{ border-radius:20px;}
+.anpt_newpay_button.buttondesign0 span{ display:inline-block; margin:0 0 0 10px; vertical-align:middle;}
+.anpt_newpay_button.buttondesign0.icon1 span{background:url(../images/blue_arrow_bg.png) no-repeat; width:15px; height:14px; display:inline-block; position:absolute; right:22px; top:12px;}
+.anpt_newpay_button.buttondesign0.icon2 span{ background:url(../images/white_arrow_bg.png) no-repeat; width:15px; height:14px; display:inline-block; position:absolute; right:22px; top:12px;}
+.anpt_newpay_button.buttondesign0.icon3 span{background: url(../images/blue_arrow2_bg.png) no-repeat; width:22px; height:22px; display:inline-block; position:absolute; right:16px; top:8px;}
+.anpt_newpay_button.buttondesign0.icon4 span{background: url(../images/white_arrow2_bg.png) no-repeat; width:22px; height:22px; display:inline-block; position:absolute; right:16px; top:8px;}
+.anpt_newpay_button.buttondesign0.icon5 span{background:url(../images/blue_card_bg.png) no-repeat; width:21px; height:16px; display:inline-block; position:absolute; right:16px; top:12px;}
+.anpt_newpay_button.buttondesign0.icon6 span{background: url(../images/white_card_bg.png) no-repeat; width:21px; height:16px; display:inline-block; position:absolute; right:16px; top:12px;}
+
+
+
+.anpt_newpay_button.buttondesign1 { height:40px; line-height:40px; text-align:center; background:#E4E4E4; color:#003366; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign2 { height:40px; line-height:40px; text-align:center; background:#3399FF; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign3 {  height:40px; line-height:40px; text-align:center; background:#003366; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign4 {  height:40px; line-height:40px; text-align:center; background:#663399; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign5 {  height:40px; line-height:40px; text-align:center; background:#FF6600; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign6 {  height:40px; line-height:40px; text-align:center; background:#CC3300; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign7 {  height:40px; line-height:40px; text-align:center; background:#990000; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign8 { background: url(../images/button_color1_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #E4E4E4; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#003366;  position:relative;}
+.anpt_newpay_button.buttondesign9 { background:url(../images/button_color2_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #2D85DE; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff; position:relative;}
+.anpt_newpay_button.buttondesign10 { background:url(../images/button_color3_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #002F5F; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff;  position:relative;}
+.anpt_newpay_button.buttondesign11 { background:url(../images/button_color4_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #541A8D; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff;  position:relative;}
+.anpt_newpay_button.buttondesign12 { background:url(../images/button_color5_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #E45B00; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff;  position:relative;}
+.anpt_newpay_button.buttondesign13 { background:url(../images/button_color6_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #B62E00; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff;  position:relative;}
+.anpt_newpay_button.buttondesign14 { background:url(../images/button_color7_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #890000; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff;  position:relative;}
+.anpt_newpay_button.buttondesign15 {  height:40px; line-height:40px; text-align:center; background:#E4E4E4; color:#003366; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:5px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign16 {  height:40px; line-height:40px; text-align:center; background:#3399FF; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:5px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign17 {  height:40px; line-height:40px; text-align:center; background:#003366; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:5px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign18 {  height:40px; line-height:40px; text-align:center; background:#663399; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:5px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign19 {  height:40px; line-height:40px; text-align:center; background:#FF6600; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:5px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign20 { height:40px; line-height:40px; text-align:center; background:#CC3300; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:5px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign21 { height:40px; line-height:40px; text-align:center; background:#990000; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:5px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign22 { background: url(../images/button_color1_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #E4E4E4; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#003366; border-radius:5px; position:relative;}
+.anpt_newpay_button.buttondesign23 { background:url(../images/button_color2_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #2D85DE; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff; border-radius:5px; position:relative;}
+.anpt_newpay_button.buttondesign24 { background:url(../images/button_color3_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #002F5F; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff; border-radius:5px; position:relative;}
+.anpt_newpay_button.buttondesign25 { background:url(../images/button_color4_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #541A8D; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff; border-radius:5px; position:relative;}
+.anpt_newpay_button.buttondesign26 { background:url(../images/button_color5_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #E45B00; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff; border-radius:5px; position:relative;}
+.anpt_newpay_button.buttondesign27 { background:url(../images/button_color6_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #B62E00; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff; border-radius:5px; position:relative;}
+.anpt_newpay_button.buttondesign28 { background:url(../images/button_color7_bg.png) repeat-x; padding:0 46px 0 20px; height:38px; border:1px solid #890000; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff; border-radius:5px; position:relative;}
+.anpt_newpay_button.buttondesign29 {  height:40px; line-height:40px; text-align:center; background:#E4E4E4; color:#003366; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:20px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign30 {  height:40px; line-height:40px; text-align:center; background:#3399FF; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:20px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign31 { height:40px; line-height:40px; text-align:center; background:#003366; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:20px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign32 { height:40px; line-height:40px; text-align:center; background:#663399; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:20px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign33 { height:40px; line-height:40px; text-align:center; background:#FF6600; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:20px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign34 {  height:40px; line-height:40px; text-align:center; background:#CC3300; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:20px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign35 {  height:40px; line-height:40px; text-align:center; background:#990000; color:#fff; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  border-radius:20px; padding:0 26px 0 25px;}
+.anpt_newpay_button.buttondesign36 { background: url(../images/button_color1_bg.png) repeat-x; height:38px; border:1px solid #E4E4E4; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#003366; padding:0 46px 0 20px; border-radius:20px; position:relative;}
+.anpt_newpay_button.buttondesign37 { background:url(../images/button_color2_bg.png) repeat-x;  height:38px; border:1px solid #2D85DE; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff; padding:0 46px 0 20px; border-radius:20px; position:relative;}
+.anpt_newpay_button.buttondesign38 { background:url(../images/button_color3_bg.png) repeat-x;  height:38px; border:1px solid #002F5F; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff; padding:0 46px 0 20px; border-radius:20px; position:relative;}
+.anpt_newpay_button.buttondesign39 { background:url(../images/button_color4_bg.png) repeat-x;  height:38px; border:1px solid #541A8D; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff; padding:0 46px 0 20px; border-radius:20px; position:relative;}
+.anpt_newpay_button.buttondesign40 { background:url(../images/button_color5_bg.png) repeat-x;  height:38px; border:1px solid #E45B00; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff; padding:0 46px 0 20px; border-radius:20px; position:relative;}
+.anpt_newpay_button.buttondesign41 { background:url(../images/button_color6_bg.png) repeat-x;  height:38px; border:1px solid #B62E00; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff; padding:0 46px 0 20px; border-radius:20px; position:relative;}
+.anpt_newpay_button.buttondesign42 { background:url(../images/button_color7_bg.png) repeat-x;  height:38px; border:1px solid #890000; font-size:14px; font-family: 'Roboto', sans-serif; text-decoration:none; display:inline-block;  line-height:38px; color:#fff; padding:0 46px 0 20px; border-radius:20px; position:relative;}
+.anpt_newpay_button.buttondesign1 span{ display:none;}
+.anpt_newpay_button.buttondesign2 span{ display:none;}
+.anpt_newpay_button.buttondesign3 span{ display:none;}
+.anpt_newpay_button.buttondesign4 span{ display:none;}
+.anpt_newpay_button.buttondesign5 span{ display:none;}
+.anpt_newpay_button.buttondesign6 span{ display:none;}
+.anpt_newpay_button.buttondesign7 span{ display:none;}
+.anpt_newpay_button.buttondesign8 span{background:url(../images/blue_card_bg.png) no-repeat; width:21px; height:16px; display:inline-block; position:absolute; right:16px; top:12px;}
+.anpt_newpay_button.buttondesign9 span{background: url(../images/white_card_bg.png) no-repeat; width:21px; height:16px; display:inline-block; position:absolute; right:16px; top:12px;}
+.anpt_newpay_button.buttondesign10 span{background: url(../images/white_card_bg.png) no-repeat; width:21px; height:16px; display:inline-block; position:absolute; right:16px; top:12px;}
+.anpt_newpay_button.buttondesign11 span{background: url(../images/white_card_bg.png) no-repeat; width:21px; height:16px; display:inline-block; position:absolute; right:16px; top:12px;}
+.anpt_newpay_button.buttondesign12 span{background: url(../images/white_card_bg.png) no-repeat; width:21px; height:16px; display:inline-block; position:absolute; right:16px; top:12px;}
+.anpt_newpay_button.buttondesign13 span{background: url(../images/white_card_bg.png) no-repeat; width:21px; height:16px; display:inline-block; position:absolute; right:16px; top:12px;}
+.anpt_newpay_button.buttondesign14 span{background: url(../images/white_card_bg.png) no-repeat; width:21px; height:16px; display:inline-block; position:absolute; right:16px; top:12px;}
+.anpt_newpay_button.buttondesign15 span{ display:none;}
+.anpt_newpay_button.buttondesign16 span{ display:none;}
+.anpt_newpay_button.buttondesign17 span{ display:none;}
+.anpt_newpay_button.buttondesign18 span{ display:none;}
+.anpt_newpay_button.buttondesign19 span{ display:none;}
+.anpt_newpay_button.buttondesign20 span{ display:none;}
+.anpt_newpay_button.buttondesign21 span{ display:none;}
+.anpt_newpay_button.buttondesign22 span{background:url(../images/blue_arrow_bg.png) no-repeat; width:15px; height:14px; display:inline-block; position:absolute; right:22px; top:12px;}
+.anpt_newpay_button.buttondesign23 span{ background:url(../images/white_arrow_bg.png) no-repeat; width:15px; height:14px; display:inline-block; position:absolute; right:22px; top:12px;}
+.anpt_newpay_button.buttondesign24 span{ background:url(../images/white_arrow_bg.png) no-repeat; width:15px; height:14px; display:inline-block; position:absolute; right:22px; top:12px;}
+.anpt_newpay_button.buttondesign25 span{ background:url(../images/white_arrow_bg.png) no-repeat; width:15px; height:14px; display:inline-block; position:absolute; right:22px; top:12px;}
+.anpt_newpay_button.buttondesign26 span{ background:url(../images/white_arrow_bg.png) no-repeat; width:15px; height:14px; display:inline-block; position:absolute; right:22px; top:12px;}
+.anpt_newpay_button.buttondesign27 span{ background:url(../images/white_arrow_bg.png) no-repeat; width:15px; height:14px; display:inline-block; position:absolute; right:22px; top:12px;}
+.anpt_newpay_button.buttondesign28 span{ background:url(../images/white_arrow_bg.png) no-repeat; width:15px; height:14px; display:inline-block; position:absolute; right:22px; top:12px;}
+.anpt_newpay_button.buttondesign29 span{ display:none;}
+.anpt_newpay_button.buttondesign30 span{ display:none;}
+.anpt_newpay_button.buttondesign31 span{ display:none;}
+.anpt_newpay_button.buttondesign32 span{ display:none;}
+.anpt_newpay_button.buttondesign33 span{ display:none;}
+.anpt_newpay_button.buttondesign34 span{ display:none;}
+.anpt_newpay_button.buttondesign35 span{ display:none;}
+.anpt_newpay_button.buttondesign36 span{background: url(../images/blue_arrow2_bg.png) no-repeat; width:22px; height:22px; display:inline-block; position:absolute; right:16px; top:8px;}
+.anpt_newpay_button.buttondesign37 span{background: url(../images/white_arrow2_bg.png) no-repeat; width:22px; height:22px; display:inline-block; position:absolute; right:16px; top:8px;}
+.anpt_newpay_button.buttondesign38 span{background: url(../images/white_arrow2_bg.png) no-repeat; width:22px; height:22px; display:inline-block; position:absolute; right:16px; top:8px;}
+.anpt_newpay_button.buttondesign39 span{background: url(../images/white_arrow2_bg.png) no-repeat; width:22px; height:22px; display:inline-block; position:absolute; right:16px; top:8px;}
+.anpt_newpay_button.buttondesign40 span{background: url(../images/white_arrow2_bg.png) no-repeat; width:22px; height:22px; display:inline-block; position:absolute; right:16px; top:8px;}
+.anpt_newpay_button.buttondesign41 span{background: url(../images/white_arrow2_bg.png) no-repeat; width:22px; height:22px; display:inline-block; position:absolute; right:16px; top:8px;}
+.anpt_newpay_button.buttondesign42 span{background: url(../images/white_arrow2_bg.png) no-repeat; width:22px; height:22px; display:inline-block; position:absolute; right:16px; top:8px;}
+
+#ui-datepicker-div{ display:none;}
+.syncStipeButton{ float:right;}
+.iconRecurring{ background:url(images/recurring.png) no-repeat; width:26px; height:26px; display:inline-block; margin:2px 5px 0 0;}
+.cancelRecurring{ background:url(images/cancelRecurring.png) no-repeat; width:26px; height:26px; display:inline-block; margin:2px 5px 0 0;}
+.iconComment{ background:url(images/comment.png) no-repeat; width:26px; height:26px; display:inline-block; margin:2px 5px 0 0;}
+
+.tabbedArea{}
+.tabbedArea ul.tabs{ margin:0; padding:0; list-style-type:none;}
+.tabbedArea ul.tabs li{ float:left; background:#fff; border:1px solid #ccc; border-radius:6px 6px 0 0; padding:5px 10px; margin:0 2px 0 0; cursor:pointer;}
+.tabbedArea ul.tabs li.active{ border-bottom:1px solid #fff;}
+.tabbedArea .tabDiv{ display:none; border:1px solid #ccc; background:#fff; padding:10px; margin:-1px 0 0 0;}
+#pp_full_res iframe{ margin:0;}
+div.pp_default .pp_description{ margin:5px 50px 0px 10px !important;}
