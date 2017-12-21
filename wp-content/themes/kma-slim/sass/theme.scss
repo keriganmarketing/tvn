@@ -267,7 +267,21 @@ body {
         a.menu-item:hover {
           color: #000;
         }
+
+        .navbar-dropdown {
+          top: 0;
+          left:100%;
+        }
       }
+
+      .navbar-item .navbar-dropdown {
+        display: none;
+      }
+
+      .navbar-item.is-hoverable:hover>.navbar-dropdown {
+        display: block;
+      }
+
     }
   }
 
