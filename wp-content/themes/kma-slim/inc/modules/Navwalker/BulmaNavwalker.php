@@ -84,7 +84,7 @@ class BulmaNavwalker extends \Walker_Nav_Menu {
             }
         }
         function end_el( &$output, $item, $depth = 0, $args = array() ) {
-            if( ($item->menu_item_parent == 0 || $walkerAtts->has_children == 1) || (strcasecmp( $item->attr_title, 'divider' ) == 0 && $depth === 1) || (in_array('button',$item->classes) && $depth === 1) ){
+            if( ($item->menu_item_parent == 0 || $item->has_children == 1) || (strcasecmp( $item->attr_title, 'divider' ) == 0 && $depth === 1) || (in_array('button',$item->classes) && $depth === 1) ){
                 $output .= "</div>\n";
             }
         }

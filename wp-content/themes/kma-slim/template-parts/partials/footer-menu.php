@@ -42,8 +42,7 @@ use Includes\Modules\Social\SocialSettingsPage;
         </div>
     </div>
     <div class="column is-4">
-        <a href="#" class="button white-button is-uppercase mb-20">Make a payment</a>
-        <?= do_shortcode('[anpt_paybutton text="Pay Now" comment="false" service="false" amount="10.99" design="1" lightbox="true"]'); ?>
+        <a href="/make-a-payment/" class="button white-button is-uppercase mb-20">Make a payment</a>
         <p class="menu-heading is-uppercase mb-5">
             CONTACT:
         </p>

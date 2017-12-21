@@ -12,6 +12,7 @@ use Includes\Modules\Layouts\Layouts;
 use Includes\Modules\Helpers\PageField;
 use Includes\Modules\Social\SocialSettingsPage;
 use KeriganSolutions\CPT\CustomPostType;
+use Includes\Modules\PaymentTerminal\ANetTerminal;
 
 require('vendor/autoload.php');
 
