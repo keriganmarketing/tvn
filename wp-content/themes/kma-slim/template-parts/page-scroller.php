@@ -33,6 +33,9 @@ include(locate_template('template-parts/sections/top.php'));
                     </div>
                     <div class="column is-12 is-9-desktop">
                         <div class="entry-content content <?= $hasSidebars ? 'has-sidebar' : ''; ?>">
+                            <div class="sub-section">
+                                <?php the_content(); ?>
+                            </div>
                             <?php foreach(getPageChildren($post->post_title) as $child){ ?>
                                 <div class="sub-section">
                                     <a name="<?= $child->post_name; ?>" class="pad-anchor"></a>
