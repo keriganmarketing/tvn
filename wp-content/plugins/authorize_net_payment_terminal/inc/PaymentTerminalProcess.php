@@ -41,7 +41,7 @@ class PaymentTerminalProcess
         $this->serviceID             = isset($_GET['serviceID']) ? $_GET["serviceID"] : '';
         $this->show_services         = isset($_GET['serv']) && $_GET['serv'] == 'true' ? 1 : 0;
 
-        $this->formSubmit(); //listen for form submit
+        //$this->formSubmit(); //listen for form submit
     }
 
     public function getServices()
@@ -448,7 +448,7 @@ class PaymentTerminalProcess
                     echo "Charge Credit Card AUTH CODE : " . $tresponse->getAuthCode() . "\n";
                     echo "Charge Credit Card TRANS ID  : " . $tresponse->getTransId() . "\n";
                     return true;
-                } elseif (($tresponse != null) && ($tresponse->getResponseCode() != "1")) {
+                } else {
                     $errors = $tresponse->getErrors();
                     echo "Charge Credit Card ERROR :  Code " . $tresponse->getResponseCode();
                     echo '<pre>' . print_r($errors) . '</pre>';
