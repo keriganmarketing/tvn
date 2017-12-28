@@ -26,6 +26,7 @@ $layouts = new Layouts();
 $layouts->addPageHeadlines();
 $layouts->createSidebarSelector();
 $layouts->addSidebar('Featured Image Sidebar');
+$layouts->addSidebar('Section Anchor Sidebar');
 
 add_action( 'after_setup_theme', function() {
 
