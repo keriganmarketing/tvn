@@ -39,8 +39,8 @@ include(locate_template('template-parts/sections/top.php'));
                             <?php foreach(getPageChildren($post->post_title) as $child){ ?>
                                 <div class="sub-section">
                                     <a name="<?= $child->post_name; ?>" class="pad-anchor"></a>
-                                    <?php if(has_post_thumbnail($child)){
-                                        the_post_thumbnail('large');
+                                    <?php if(has_post_thumbnail($child->ID)){
+                                        get_the_post_thumbnail($child->ID, 'large');
                                     } ?>
                                     <h2 class="title"><?= $child->post_title; ?></h2>
                                     <p><?= apply_filters('the_content', $child->post_content); ?></p>
