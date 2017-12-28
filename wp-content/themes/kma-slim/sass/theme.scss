@@ -546,7 +546,8 @@ body {
   }
 
   .sub-section {
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    clear: both;
 
     .featured-image.is-pulled-left {
       max-width: 200px;
