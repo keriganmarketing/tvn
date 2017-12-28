@@ -40,7 +40,10 @@ include(locate_template('template-parts/sections/top.php'));
                                 <div class="sub-section">
                                     <a name="<?= $child->post_name; ?>" class="pad-anchor"></a>
                                     <?php if(has_post_thumbnail($child->ID)){
-                                        get_the_post_thumbnail($child->ID, 'large');
+                                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $child->ID ), 'single-post-thumbnail' );
+                                        ?>
+                                        <img src="<?= $image[0]; ?>" alt="<?= $child->post_title; ?>" class="featured-image is-pulled-left" >
+                                        <?php
                                     } ?>
                                     <h2 class="title"><?= $child->post_title; ?></h2>
                                     <p><?= apply_filters('the_content', $child->post_content); ?></p>

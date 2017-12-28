@@ -547,6 +547,11 @@ body {
 
   .sub-section {
     margin-bottom: 2rem;
+
+    .featured-image.is-pulled-left {
+      max-width: 200px;
+      margin: 0 1.75rem .5rem 0;
+    }
   }
 
 }
