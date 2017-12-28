@@ -55,13 +55,11 @@ if ( ! empty($_POST["process"]) && $_POST["process"] == "yes") {
         $captcha = true;
     }
     if ($captcha) {
-        ini_set('include_path', $moduleDir);
-        require($moduleDir . 'authorize/form.processing.php');
-        ini_set('include_path', dirname(__FILE__));
+        require(wp_normalize_path($moduleDir . '/authorize/form.processing.php'));
     }
 }
 ?>
-<form id="ff1" name="ff1" method="post" action="" enctype="multipart/form-data" onsubmit="return false" class="anpt_form">
+<form id="ff1" name="ff1" method="post" action="" enctype="multipart/form-data" class="anpt_form">
     <h2 class="current">Payment Information</h2>
     <div class="pane" style="display:block">
         <?php if ($show_services == 1) {
@@ -576,10 +574,10 @@ if ( ! empty($_POST["process"]) && $_POST["process"] == "yes") {
         </div>
         <div class="columns is-multiline">
             <div class="column is-12">
+                <input type="hidden" name="process" value="yes" />
                 <div class="submit-btn">
                     <button type="submit" name="submit" class="button is-primary" <?php if ($anpt_enable_captcha){ ?>disabled<?php } ?> >Submit Payment</button>
                 </div>
-                <input type="hidden" name="process" value="yes" />
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <?php
 
 use Includes\Modules\Layouts\Layouts;
-use Includes\Modules\PaymentTerminal\ANetTerminal;
+//use Includes\Modules\PaymentTerminal\ANetTerminal;
 
 /**
  * @package KMA
@@ -20,15 +20,10 @@ include(locate_template('template-parts/sections/top.php'));
         <?php include(locate_template('template-parts/sections/breadcrumbs.php')); ?>
         <section id="content" class="section support">
             <div class="container">
-                <div class="entry-content content <?= $hasSidebars ? 'has-sidebar' : ''; ?>">
+                <div class="entry-content content">
                     <?php
-                    the_content( sprintf(
-                    /* translators: %s: Name of current post. */
-                        wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'kmaslim' ), array( 'span' => array( 'class' => array() ) ) ),
-                        the_title( '<span class="screen-reader-text">"', '"</span>', false )
-                    ) );
-
-                    $terminal = new ANetTerminal();
+                    the_content();
+                    //$terminal = new ANetTerminal();
                     ?>
                 </div>
             </div>

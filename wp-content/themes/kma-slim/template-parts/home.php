@@ -37,7 +37,7 @@ include(locate_template('template-parts/sections/top.php'));
         <div class="section home-modules">
             <div class="container pad">
                 <div class="columns is-8 is-multiline is-centered support-modules">
-                <?php foreach(getPageChildren('Conditions') as $child){ ?>
+                <?php foreach(getPageChildren('Specialties') as $child){ ?>
                 <div class="column is-4 has-text-centered">
                     <div class="card home-module">
                         <div class="card-content">

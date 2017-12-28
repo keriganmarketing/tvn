@@ -12,7 +12,6 @@ use Includes\Modules\Layouts\Layouts;
 use Includes\Modules\Helpers\PageField;
 use Includes\Modules\Social\SocialSettingsPage;
 use KeriganSolutions\CPT\CustomPostType;
-use Includes\Modules\PaymentTerminal\ANetTerminal;
 
 require('vendor/autoload.php');
 
@@ -54,12 +53,11 @@ add_action( 'after_setup_theme', function() {
         <?php echo file_get_contents(get_template_directory() . '/style.css'); ?>
         </style><?php
     } );
-    wp_register_script( 'scripts', get_template_directory_uri() . '/app.js', array(), '0.0.1', true );
 
 } );
 
 add_action( 'wp_enqueue_scripts', function() {
-    wp_enqueue_script( 'scripts' );
+    wp_enqueue_script( 'scripts',get_template_directory_uri() . '/app.js', array(), '0.0.1', true );
 } );
 
 function getPageChildren($pageName)

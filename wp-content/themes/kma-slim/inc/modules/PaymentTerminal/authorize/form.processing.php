@@ -19,7 +19,7 @@ $anpt_recurring=0;
 $currencyDisplay = "";
 # PLEASE DO NOT EDIT FOLLOWING LINES IF YOU'RE NOT SURE ------->
 
-//global $wpdb;
+global $wpdb;
 //get thank you text to display in emails and in thank you message, if needed.
 $anpt_ty_text_var = $wpdb->get_var("SELECT option_value FROM {$wpdb->prefix}options WHERE option_name = 'anpt_ty_text'");
 $anpt_ty_text = $anpt_ty_text_var ? nl2br($anpt_ty_text_var) : "";

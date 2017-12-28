@@ -400,7 +400,7 @@ body {
   @media screen and (min-width: $desktop) {
     .home-modules {
       padding-top: 0;
-      margin-top: -3rem;
+      margin-top: -6rem;
     }
   }
 
@@ -554,6 +554,11 @@ body {
       color: $white;
       border-color: $white;
     }
+    a.button.is-primary:hover {
+      color: #49677f;
+      background-color: $white;
+      border-color: $white;
+    }
   }
 }
 
@@ -567,6 +572,10 @@ body {
       a.button.is-primary {
         color: $primary;
         border-color: $primary;
+      }
+      a.button.is-primary:hover {
+        color: $white;
+        background-color: $primary;
       }
     }
   }
@@ -606,7 +615,8 @@ body {
   }
   .white-button {
     padding: 20px 50px;
-    color: #410080;
+    color: $primary;
+    border-color: $primary;
   }
 
 }
