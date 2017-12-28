@@ -553,9 +553,13 @@ body {
     padding-bottom: 2rem;
     clear: both;
 
-    .featured-image.is-pulled-left {
-      max-width: 200px;
-      margin: 0 1.75rem .5rem 0;
+    .featured-image {
+      margin: 1rem 0;
+      @media screen and (min-width: $tablet){
+        max-width: 200px;
+        float: left;
+        margin: 0 1.75rem .5rem 0;
+      }
     }
   }
 
