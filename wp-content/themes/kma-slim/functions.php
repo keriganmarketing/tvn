@@ -63,11 +63,12 @@ add_action( 'wp_enqueue_scripts', function() {
 
 function getPageChildren($pageName)
 {
-    $wpQuery = new WP_Query();
-    $allPages = $wpQuery->query(array('post_type' => 'page', 'posts_per_page' => '-1'));
-
     $parent = get_page_by_title( $pageName );
-    $children = get_page_children( $parent->ID, $allPages);
+    $children = get_pages([
+        'parent' => $parent->ID,
+        'sort_column'  => 'menu_order',
+        'sort_order'   => 'asc'
+    ]);
 
     return $children;
 }
