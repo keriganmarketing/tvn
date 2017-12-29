@@ -12,7 +12,25 @@ use Includes\Modules\Navwalker\BulmaNavwalker;
 ?>
 <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'kmaslim'); ?></a>
 <div id="app" :class="{'modal-open': modalOpen }">
-    <div :class="['site-wrapper', {'full-height': footerStuck}]">
+    <div id="MobileNavMenu" :class="[{ 'is-active': isOpen }, 'navbar']">
+        <div class="nav-wrapper">
+            <?php wp_nav_menu([
+                'theme_location' => 'main-menu',
+                'container'      => false,
+                'menu_class'     => 'navbar-start',
+                'fallback_cb'    => '',
+                'menu_id'        => 'mobile-menu',
+                'link_before'    => '',
+                'link_after'     => '',
+                'items_wrap'     => '<div id="%1$s" class="%2$s">%3$s</div>',
+                'walker'         => new BulmaNavwalker()
+            ]); ?>
+            <div class="navbar-close" id="MobileNavClose" data-target="MobileNavMenu" @click="toggleMenu">
+                <span class="delete"></span>&nbsp;close menu
+            </div>
+        </div>
+    </div>
+    <div :class="['site-wrapper', { 'menu-open': isOpen }, {'full-height': footerStuck }, {'scrolling': isScrolling }]">
         <div class="top-top is-hidden-desktop">
             <a href="/" >Home</a> | <a href="/contact/">Contact</a>
         </div>
@@ -57,6 +75,14 @@ use Includes\Modules\Navwalker\BulmaNavwalker;
             <div class="top-two">
                 <div class="container">
                     <nav class="navbar navbar-bottom-row">
+                        <div class="burger" id="MobileNavBurger" data-target="MobileNavMenu" @click="toggleMenu">
+                            <span class="burger-label">MENU</span>
+                            <span class="navbar-burger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
                         <?php wp_nav_menu(array(
                             'theme_location' => 'main-menu',
                             'container'      => false,
