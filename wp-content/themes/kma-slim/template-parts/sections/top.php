@@ -11,8 +11,8 @@ use Includes\Modules\Navwalker\BulmaNavwalker;
  */
 ?>
 <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'kmaslim'); ?></a>
-<div id="app" :class="{'modal-open': modalOpen }">
-    <div id="MobileNavMenu" :class="[{ 'is-active': isOpen }, 'navbar']">
+<div id="app" :class="['app', {'modal-open': modalOpen }]">
+    <div id="MobileNavMenu" :class="['navbar', { 'is-active': isOpen }]">
         <div class="nav-wrapper">
             <?php wp_nav_menu([
                 'theme_location' => 'main-menu',
