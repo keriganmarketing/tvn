@@ -127,7 +127,6 @@ body {
     flex-direction: column;
     position: relative;
     z-index: 2;
-    position: relative;
 
     @media screen and (min-width:768px) and (max-width: 1084px){
       .container {
@@ -145,6 +144,10 @@ body {
         width: 894px;
       }
     }
+  }
+
+  .site-wrapper.menu-open {
+    display:none;
   }
 
   .site-wrapper.full-height {

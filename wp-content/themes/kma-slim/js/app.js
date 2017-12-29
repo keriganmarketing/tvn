@@ -41,6 +41,7 @@ var app = new Vue({
         clientHeight: 0,
         windowHeight: 0,
         windowWidth: 0,
+        menuItems: []
     },
 
     methods: {

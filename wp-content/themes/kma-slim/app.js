@@ -191,7 +191,8 @@ var app = new Vue({
         footerStuck: false,
         clientHeight: 0,
         windowHeight: 0,
-        windowWidth: 0
+        windowWidth: 0,
+        menuItems: []
     },
 
     methods: {
