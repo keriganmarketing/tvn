@@ -206,6 +206,7 @@ var app = new Vue({
             this.menuItems.forEach(function (menuItem) {
                 var menuLink = menuItem.querySelector('.mobile-expand');
                 menuLink.addEventListener('click', function (e) {
+                    console.log('clicked');
                     var menu = menuItem.querySelector('.navbar-dropdown');
                     if (menu.classList.contains('is-open')) {
                         menu.classList.remove('is-open');
@@ -223,7 +224,7 @@ var app = new Vue({
         this.windowHeight = window.innerHeight;
         this.windowWidth = window.innerWidth;
         this.handleScroll();
-        this.menuItems = this.$el.querySelectorAll('#MobileNavMenu .has-dropdown');
+        this.menuItems = this.$el.querySelectorAll('#MobileNavMenu');
         this.handleMobileSubMenu();
     },
 

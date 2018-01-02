@@ -95,7 +95,7 @@ body {
         }
       }
 
-      .navbar-item.has-dropdown{
+      .navbar-item {
         .navbar-dropdown.is-open {
           height: auto;
           display: block;
@@ -104,12 +104,12 @@ body {
 
       a.navbar-item.is-active, .navbar-link.is-active {
         background-color: transparent;
-        color: #862C1B;
+        color: $primary;
       }
 
       a.navbar-item:hover, .navbar-link:hover {
         background-color: transparent;
-        color: #31081F;
+        color: $black;
       }
 
     }
