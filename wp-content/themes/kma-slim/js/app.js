@@ -77,7 +77,7 @@ var app = new Vue({
         this.windowHeight = window.innerHeight;
         this.windowWidth = window.innerWidth;
         this.handleScroll();
-        this.menuItems = this.$el.querySelectorAll('#MobileNavMenu');
+        this.menuItems = this.$el.querySelectorAll('#MobileNavMenu .has-dropdown');
         this.handleMobileSubMenu();
     },
 
