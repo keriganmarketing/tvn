@@ -22,7 +22,7 @@ class BulmaNavwalker extends \Walker_Nav_Menu {
 
     function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<div role=\"menu\" class=\" navbar-dropdown is-boxedu\">\n";
+        $output .= "\n$indent<div role=\"menu\" class=\"navbar-dropdown is-boxedu\">\n";
     }
     function end_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);

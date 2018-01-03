@@ -57,15 +57,18 @@ var app = new Vue({
         handleMobileSubMenu(){
             this.menuItems.forEach(menuItem => {
                 let menuLink = menuItem.querySelector('.mobile-expand');
-                menuLink.addEventListener('click', function(e){
-                    console.log('clicked');
-                    let menu = menuItem.querySelector('.navbar-dropdown');
-                    if(menu.classList.contains('is-open')){
-                        menu.classList.remove('is-open');
-                    } else {
-                        menu.classList.add('is-open');
-                    }
-                });
+                if(menuLink != null) {
+                    menuLink.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        console.log('clicked');
+                        let menu = menuItem.querySelector('.navbar-dropdown');
+                        if (menu.classList.contains('is-open')) {
+                            menu.classList.remove('is-open');
+                        } else {
+                            menu.classList.add('is-open');
+                        }
+                    });
+                }
             });
         }
 
@@ -77,7 +80,7 @@ var app = new Vue({
         this.windowHeight = window.innerHeight;
         this.windowWidth = window.innerWidth;
         this.handleScroll();
-        this.menuItems = this.$el.querySelectorAll('#MobileNavMenu .has-dropdown');
+        this.menuItems = this.$el.querySelectorAll('#MobileNavMenu .navbar-item');
         this.handleMobileSubMenu();
     },
 
