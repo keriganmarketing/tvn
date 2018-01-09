@@ -23,10 +23,10 @@ class Leads
         date_default_timezone_set('America/Chicago');
 
         $this->postType   = 'Lead';
-        $this->domain     = 'beachtimerealty.com';
+        $this->domain     = 'thevirtualnephrologist.com';
 
         //separate multiple email addresses with a ';'
-        $this->adminEmail = 'bthomaspcb@outlook.com';
+        $this->adminEmail = 'bryan@kerigan.com';
         $this->ccEmail    = ''; //Admin email only
         $this->bccEmail   = 'support@kerigan.com';
 

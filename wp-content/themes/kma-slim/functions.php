@@ -6,7 +6,7 @@
  * @version 1.3
  */
 
-use Includes\Modules\Leads\Leads;
+use Includes\Modules\Leads\SimpleContact;
 use Includes\Modules\Helpers\CleanWP;
 use Includes\Modules\Layouts\Layouts;
 use Includes\Modules\Helpers\PageField;
@@ -27,6 +27,9 @@ $layouts->addPageHeadlines();
 $layouts->createSidebarSelector();
 $layouts->addSidebar('Featured Image Sidebar');
 $layouts->addSidebar('Section Anchor Sidebar');
+
+$leads = new SimpleContact();
+$leads->setupAdmin();
 
 add_action( 'after_setup_theme', function() {
 

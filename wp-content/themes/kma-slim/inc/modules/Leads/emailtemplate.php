@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <style>
         * { font-family: sans-serif; }
-        h2 { color: #D85035; font-weight:bold; }
+        h2 { color: #5E18BB; font-weight:bold; }
         p { color: #555; font-size: 14px; }
         table.data { background-color: #fff; }
         table.data td { background-color: #fdfdfd; border: 1px solid #FFF; font-size: 14px; color: #555; padding:4px 6px; }
         table.data td.label { font-weight:bold; width:30%; }
-        a { color: #D85035; }
+        a { color: #5E18BB; }
     </style>
 </head>
 <body bgcolor="#EAEAEA" style="background-color:#EAEAEA;">
