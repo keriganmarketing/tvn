@@ -100,6 +100,7 @@ body {
           height: auto;
           display: block;
         }
+
       }
 
       a.navbar-item.is-active, .navbar-link.is-active {
@@ -636,6 +637,15 @@ body {
       line-height: $body-line-height;
     }
 
+  }
+
+  .featured-image-sidebar {
+    border-radius: 1rem;
+    overflow: hidden;
+
+    img {
+      display: block;
+    }
   }
 
   @media screen and (min-width: $desktop) {

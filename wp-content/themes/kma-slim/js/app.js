@@ -60,7 +60,6 @@ var app = new Vue({
                 if(menuLink != null) {
                     menuLink.addEventListener('click', function (e) {
                         e.preventDefault();
-                        console.log('clicked');
                         let menu = menuItem.querySelector('.navbar-dropdown');
                         if (menu.classList.contains('is-open')) {
                             menu.classList.remove('is-open');
