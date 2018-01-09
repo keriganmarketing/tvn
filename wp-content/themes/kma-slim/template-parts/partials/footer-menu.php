@@ -16,7 +16,7 @@ use Includes\Modules\Social\SocialSettingsPage;
             <p class="menu-heading is-uppercase">
                 SPECIALTIES
             </p>
-            <?php foreach(getPageChildren('Conditions') as $child){ ?>
+            <?php foreach(getPageChildren('Specialties') as $child){ ?>
                 <a href="<?= get_permalink($child->ID); ?>" class="footer-submenu-item"><?= $child->post_title; ?></a>
             <?php } ?>
         </div>
