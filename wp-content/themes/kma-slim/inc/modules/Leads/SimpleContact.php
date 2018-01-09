@@ -12,6 +12,7 @@ class SimpleContact extends Leads
                 'message' => 'Message'
             ]
         );
+        parent::set('postType', 'Contact Submission');
     }
 
 }

@@ -6,12 +6,13 @@
  * @version 1.3
  */
 
-use Includes\Modules\Leads\SimpleContact;
 use Includes\Modules\Helpers\CleanWP;
 use Includes\Modules\Layouts\Layouts;
 use Includes\Modules\Helpers\PageField;
-use Includes\Modules\Social\SocialSettingsPage;
 use KeriganSolutions\CPT\CustomPostType;
+use Includes\Modules\Leads\SimpleContact;
+use Includes\Modules\Leads\ManualSubscribe;
+use Includes\Modules\Social\SocialSettingsPage;
 
 require('vendor/autoload.php');
 
@@ -30,6 +31,10 @@ $layouts->addSidebar('Section Anchor Sidebar');
 
 $leads = new SimpleContact();
 $leads->setupAdmin();
+
+$subscribe = new ManualSubscribe();
+$subscribe->setupAdmin();
+$subscribe->setupShortcode();
 
 add_action( 'after_setup_theme', function() {
 
