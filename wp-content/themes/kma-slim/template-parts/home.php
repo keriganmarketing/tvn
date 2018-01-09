@@ -60,7 +60,7 @@ include(locate_template('template-parts/sections/top.php'));
                         <div class="doctor-bio-container">
                             <h2>The Virtual Nephrologist is your gateway to optimal health.</h2>
                             <p>Think about a routine Doctor's office visit. You get there and wait in a large waiting room. It is a WAITING room. By the time you see the physician after the wait for a few hours, you realize there are a few more questions to ask and you are still thirsty for answers.</p>
-                            <p><a class="button is-transparent" href="/about/about-dr-rifai/" >About Dr. Rifai</a></p>
+                            <p><a class="button is-transparent" href="/about-us/our-services/" >About Dr. Rifai</a></p>
                         </div>
                     </div>
                     <div class="column is-5 doctor-photo-container">
