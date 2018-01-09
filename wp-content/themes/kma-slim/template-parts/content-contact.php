@@ -28,7 +28,9 @@ include(locate_template('template-parts/sections/top.php'));
             <div class="container">
                 <div class="columns is-multiline">
                     <div class="column is-12 is-4-desktop">
-                        <?php the_content(); ?>
+                        <div class="entry-content content">
+                            <?php the_content(); ?>
+                        </div>
                     </div>
                     <div class="column is-12 is-8-desktop">
                         <div class="entry-content content has-sidebar">
