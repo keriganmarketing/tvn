@@ -95,7 +95,7 @@ use Includes\Modules\Navwalker\BulmaNavwalker;
                             'walker'         => new BulmaNavwalker()
                         )); ?>
                         <div class="navbar-end">
-                            <a class="button is-primary" href="/schedule-virtual-consultation" >Schedule a Virtual Consultation</a>
+                            <a class="button is-primary" href="/patient-resources/schedule-a-consultation/" >Schedule a Virtual Consultation</a>
                         </div>
                     </nav>
                 </div>
