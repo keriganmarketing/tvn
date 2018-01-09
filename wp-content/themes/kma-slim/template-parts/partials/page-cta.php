@@ -5,6 +5,6 @@
         TVN is your link to HEALTHCARE EXCELLENCE.
     </p>
     <p class="has-text-centered">
-        <a href="#" class="button is-outlined is-primary is-uppercase cta-button">Proceed with virtual Consult</a>
+        <a href="/patient-resources/schedule-a-consultation/" class="button is-outlined is-primary is-uppercase cta-button">Proceed with virtual Consult</a>
     </p>
 </div>
