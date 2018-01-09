@@ -637,6 +637,17 @@ body {
       line-height: $body-line-height;
     }
 
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding-left: 21px;
+    }
+
+    img.featured-image {
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+
   }
 
   .featured-image-sidebar {
