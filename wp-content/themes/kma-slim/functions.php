@@ -36,6 +36,10 @@ $subscribe = new ManualSubscribe();
 $subscribe->setupAdmin();
 $subscribe->setupShortcode();
 
+$contact = new SimpleContact();
+$contact->setupAdmin();
+$contact->setupShortcode();
+
 add_action( 'after_setup_theme', function() {
 
     load_theme_textdomain( 'kmaslim', get_template_directory() . '/languages' );
