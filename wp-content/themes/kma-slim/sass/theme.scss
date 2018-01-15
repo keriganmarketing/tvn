@@ -646,6 +646,11 @@ body {
     img.featured-image {
       border-radius: 1rem;
       margin-bottom: 1rem;
+      border: 2px solid $primary;
+
+      @media screen and (max-width: $tablet){
+        width:100%;
+      }
     }
 
   }
@@ -653,6 +658,7 @@ body {
   .featured-image-sidebar {
     border-radius: 1rem;
     overflow: hidden;
+    border: 2px solid $primary;
 
     img {
       display: block;
