@@ -1,7 +1,7 @@
 <template>
-    <article class="message" v-show="isVisible">
-        <div class="message-header"> {{ title }} <button class="delete" @click="hideMessage"></button></div>
+    <article class="message" v-show="isVisible" :class="this.class">
         <div class="message-body">
+            <button class="delete is-pulled-right" @click="hideMessage"></button>
             <slot></slot>
         </div>
     </article>
@@ -9,7 +9,10 @@
 
 <script>
     export default {
-        props: ['title'],
+        props: [
+            'title',
+            'class'
+        ],
 
         data(){
             return {

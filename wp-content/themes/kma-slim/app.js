@@ -513,7 +513,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['title'],
+    props: ['title', 'class'],
 
     data: function data() {
         return {
@@ -1703,17 +1703,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.isVisible),
       expression: "isVisible"
     }],
-    staticClass: "message"
+    staticClass: "message",
+    class: this.class
   }, [_c('div', {
-    staticClass: "message-header"
-  }, [_vm._v(" " + _vm._s(_vm.title) + " "), _c('button', {
-    staticClass: "delete",
+    staticClass: "message-body"
+  }, [_c('button', {
+    staticClass: "delete is-pulled-right",
     on: {
       "click": _vm.hideMessage
     }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "message-body"
-  }, [_vm._t("default")], 2)])
+  }), _vm._v(" "), _vm._t("default")], 2)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
