@@ -15,7 +15,7 @@ use Includes\Modules\Navwalker\BulmaNavwalker;
     <div id="MobileNavMenu" :class="['navbar', { 'is-active': isOpen }]">
         <div class="nav-wrapper">
             <?php wp_nav_menu([
-                'theme_location' => 'main-menu',
+                'theme_location' => 'mobile-menu',
                 'container'      => false,
                 'menu_class'     => 'navbar-start',
                 'fallback_cb'    => '',
