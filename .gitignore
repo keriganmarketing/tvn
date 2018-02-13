@@ -8,5 +8,5 @@ tags
 php.ini
 *error_log
 */cache/
-wp-content/uploads/
-wp-content/plugins/
+wp-content/uploads/*
+wp-content/plugins/*

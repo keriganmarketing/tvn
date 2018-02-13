@@ -5,7 +5,7 @@
 
 **Requires at least:** 3.0.1
 
-**Tested up to:** 4.6.1
+**Tested up to:** 4.9.1
 
 **Stable tag:** trunk
 
@@ -56,6 +56,10 @@ Upload Method:
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 ## Changelog ##
+
+### 1.3.2 - January 3, 2018 ###
+* Fix: Only one table searched on some environments (props @Ov3rfly)
+* Tweak: Update text in sidebar
 
 ### 1.3 - November 10, 2016 ###
 * Improvement: Updated sidebar and added pro version discount
