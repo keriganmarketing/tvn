@@ -13,6 +13,7 @@ class SimpleContact extends Leads
             ]
         );
         parent::set('postType', 'Contact Submission');
+        parent::set('adminEmail', 'thevirtualnephrologist@gmail.com');
     }
 
     protected function showForm()

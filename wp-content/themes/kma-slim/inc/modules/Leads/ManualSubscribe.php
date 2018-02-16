@@ -8,6 +8,7 @@ class ManualSubscribe extends Leads
     {
         parent::__construct ();
         parent::set('postType', 'Subscription');
+        parent::set('adminEmail', 'thevirtualnephrologist@gmail.com');
     }
 
     protected function showForm()
