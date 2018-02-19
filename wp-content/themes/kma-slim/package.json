@@ -17,6 +17,8 @@
     "vue": "^2.5.13"
   },
   "dependencies": {
+    "autoprefixer": "^8.0.0",
+    "babel-polyfill": "^6.26.0",
     "vue-parallax-js": "0.0.5",
     "vue-template-compiler": "^2.5.13"
   }
