@@ -1,5 +1,7 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\XML_Sitemaps
  */
 
@@ -67,6 +69,7 @@ class WPSEO_Sitemaps_Router {
 		$current_url .= sanitize_text_field( $_SERVER['REQUEST_URI'] );
 
 		if ( home_url( '/sitemap.xml' ) === $current_url && $wp_query->is_404 ) {
+			header( 'X-Redirect-By: Yoast SEO' );
 			wp_redirect( home_url( '/sitemap_index.xml' ), 301 );
 			exit;
 		}
@@ -93,7 +96,6 @@ class WPSEO_Sitemaps_Router {
 		$base = apply_filters( 'wpseo_sitemaps_base_url', $base );
 
 		// Get the scheme from the configured home url instead of letting WordPress determine the scheme based on the requested URI.
-		// @todo Replace with call to wp_parse_url() once minimum requirement has gone up to WP 4.7.
-		return home_url( $base . $page, parse_url( get_option( 'home' ), PHP_URL_SCHEME ) );
+		return home_url( $base . $page, wp_parse_url( get_option( 'home' ), PHP_URL_SCHEME ) );
 	}
 }
