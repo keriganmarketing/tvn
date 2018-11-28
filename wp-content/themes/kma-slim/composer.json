@@ -9,6 +9,7 @@
   },
   "require": {
     "guzzlehttp/guzzle": "^6.3",
-    "kerigansolutions/cpt": "^0.2.0"
+    "kerigansolutions/cpt": "^0.2.0",
+    "gothick/php-akismet": "^1.0"
   }
 }
