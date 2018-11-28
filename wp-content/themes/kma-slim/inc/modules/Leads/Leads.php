@@ -64,6 +64,7 @@ class Leads
      * Handle data submitted by lead form
      * @param array $dataSubmitted
      * @instructions pass $_POST to $dataSubmitted from template file
+     * @return boolean
      */
     public function handleLead ($dataSubmitted = [])
     {
