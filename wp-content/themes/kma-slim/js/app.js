@@ -1,4 +1,6 @@
-require("babel-polyfill");
+if (!window._babelPolyfill) {
+    window._babelPolyfill = require('babel-polyfill');
+}
 
 window.Vue = require('vue');
 

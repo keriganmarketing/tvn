@@ -1,8 +1,5 @@
 const { mix } = require('laravel-mix');
 
-mix.js('js/app.js', './')
-    .sass('sass/style.scss', './');
-
 mix.options({
     postCss: [
         require('autoprefixer')({
@@ -11,3 +8,7 @@ mix.options({
         })
     ]
 });
+
+
+mix.js('js/app.js', './');
+mix.sass('sass/style.scss', './');

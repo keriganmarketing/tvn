@@ -30,7 +30,7 @@ use Includes\Modules\Navwalker\BulmaNavwalker;
             </div>
         </div>
     </div>
-    <div :class="['site-wrapper', { 'menu-open': isOpen }, {'full-height': footerStuck }, {'scrolling': isScrolling }]">
+    <div v-bind:class="['site-wrapper', { 'menu-open': isOpen }, {'full-height': footerStuck }, {'scrolling': isScrolling }]">
         <div class="top-top is-hidden-desktop">
             <a href="/" >Home</a> | <a href="/contact/">Contact</a>
         </div>
