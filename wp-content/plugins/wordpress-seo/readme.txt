@@ -4,9 +4,9 @@ Donate link: https://yoa.st/1up
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: SEO, XML sitemap, Google Search Console, Content analysis, Readability
-Requires at least: 4.8
-Tested up to: 4.9.8
-Stable tag: 7.9.1
+Requires at least: 4.9
+Tested up to: 5.1
+Stable tag: 9.7
 Requires PHP: 5.2.4
 
 Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the Yoast SEO plugin.
@@ -34,8 +34,8 @@ Yoast SEO does everything in its power to please both visitors and search engine
 
 * Content & SEO analysis: Invaluable tools to write SEO-friendly texts.
 * The snippet preview shows you how your post or page will look in the search results - even on mobile. Yoast SEO Premium even has social media previews!
-* **[Premium]** The Insights tool shows you what your text focuses on so you can keep your article in line with your keywords.
-* **[Premium]** Multiple focus keywords: Optimize your article for synonyms and related keywords.
+* **[Premium]** The Insights tool shows you what your text focuses on so you can keep your article in line with your keyphrases.
+* **[Premium]** Synonyms & related keyphrases: Optimize your article for synonyms and related keyphrases.
 * **[Premium]** Automatic internal linking suggestions: write your article and get automatic suggested posts to link to.
 
 #### Keep your site in perfect shape
@@ -52,7 +52,7 @@ Yoast SEO does everything in its power to please both visitors and search engine
 
 The Yoast team does not always provide active support for the Yoast SEO plugin on the WordPress.org forums, as we prioritize our email support. One-on-one email support is available to people who [bought Yoast SEO Premium](https://yoa.st/1v8) only.
 
-Note that the [Yoast SEO Premium](https://yoa.st/1v8) also has several extra features too, including the option to have multiple focus keywords, internal linking suggestions, cornerstone content checks and a redirect manager, so it is well worth your investment!
+Note that the [Yoast SEO Premium](https://yoa.st/1v8) also has several extra features too, including the option to have synonyms and related keyphrases, internal linking suggestions, cornerstone content checks and a redirect manager, so it is well worth your investment!
 
 You should also check out the [Yoast Local SEO](https://yoa.st/1uu), [Yoast News SEO](https://yoa.st/1uv) and [Yoast Video SEO](https://yoa.st/1uw) extensions to Yoast SEO. They work with the free version of Yoast SEO already, and these premium extensions of course come with support too.
 
@@ -106,53 +106,50 @@ You'll find answers to many of your questions on [kb.yoast.com](https://yoa.st/1
 
 == Changelog ==
 
-= 7.9.1 =
-Release Date: August 7th, 2018
+= 9.7.0 =
+Release Date: February 26th, 2019
 
 Enhancements:
-* Improves the link to claim your website on Pinterest by directly sending you to the right location.
-* Adds the passive voice assessment for Dutch.
-* Adds a link to a relevant article about re-using keywords to the feedback of the assessment that checks if the keyword was used previously.
+
+* Replaces inch marks by smart quotes in search breadcrumbs.
+* Improves the feedback for the assessment that checks the length of cornerstone articles.
+* Improves accessibility and focus management for the How-To and FAQ structured data blocks.
+* Improves the Internal Links table headers on the post overview for better translations and accessibility.
+* Adds a description of the SEO and Readability score to the posts and taxonomies overview in mobile view.
+* Adds a label element to the Google Search Console authorisation code input field in the configuration wizard.
 
 Bugfixes:
-* Adds a missing H1 heading to the Network Admin > SEO > Edit Files page.
-* Fixes the textarea sizes in the Search Appearance > RSS tab.
-* Fixes a bug where adding a company image in step 4 of the Configuration Wizard, would make the wizard crash.
-* Fixes a bug where PHP error notices were given when the search result doesn't have any WooCommerce products. Props to [jaska120](https://github.com/jaska120).
-* Improves the order in which assessments are triggered. The keyword in the title is only checked once there's a title, the keyword in the introduction is only checked once there's a text, and the keyword in the meta description is only checked once there's a meta description.
-* Fixes a bug that caused keywords to be incorrectly recognized within possessive forms (e.g. `Natalia` in `Natalia's fix`).
-* Improves the recognition of keywords with special diacritics in the URL.
-* Improves keyword recognition through adding Spanish inverted exclamation and question marks to the rules that determine word boundaries.
 
-Other:
-* Corrects the WP_Filesystem() initialization call to support settings import for non-default FS_METHOD definitions. Props to [ptbello](https://github.com/ptbello).
+* Fixes a bug where a Flesch reading ease score of exactly 90 would trigger incorrect feedback.
+* Fixes a bug where the taxonomy sitemap provider would not handle private taxonomies as expected, resulting in sitemaps not being accessible in specific situations.
+* Fixes a bug where an empty twitter description instead of the term description would be shown.
+* Fixes a bug where 'undefined index' warnings would be given when saving a Facebook image.
+* Fixes a bug where the Recalibration Beta could not be loaded in combination with specific server configurations.
 
-= 7.9.0 =
-Release Date: July 24th, 2018
+= 9.6.0 =
+Release Date: February 12th, 2019
+
+Content analysis recalibration (beta):
+
+* As there are already a lot of users who are participating in testing, we currently have enough input to start preparing for the release of the improved analysis.
+  * Removes the ability to enable beta testing for new installations.
+  * When the feature is disabled, the ability to re-enable it will disappear.
 
 Enhancements:
-* Introduces the collapsible sections to all the tabs in Search Appearance.
-* Improves accessibility of the collapsible sections in Search Appearance.
+
+* Removes schema (JSON+LD) output from 404 pages.
+* Improves the Google Search Console table accessibility by removing a duplicate button.
+* Improves the code to better comply to the coding standards.
 
 Bugfixes:
-* Fixes a bug where archive settings for post types aren't shown on the search appearance page when the `has_archive` for that post type contains an archive slug. Props to [nesinervink](https://github.com/nesinervink), [schurig](https://github.com/schurig).
-* Fixes a bug where a notice ("Notice: Trying to get property of non-object") is given when the `$term->taxonomy` isn't set before it is used. Props to [bainternet](https://github.com/bainternet).
-* Fixes a bug where an uppercased encode URI isn't redirected to the category. Props to [dawnbirth](https://github.com/dawnbirth).
-* Fixes a bug where HTML entities were not always decoded in the Snippet Variables.
-* Fixes a bug where custom field labels would be separated by spaces in the classic editor, but in Gutenberg they would be separated by underscores instead.
-* Fixes a bug where the conversion of `&#039;`, which is PHP's HTML entity for the apostrophy, did not happen.
-* Fixes a bug where the same notification is shown multiple times when trashing multiple posts.
-* Fixes a bug where a possibly non-existent key would be retrieved when generating the `article:section` OpenGraph tag. Props to [mikeschinkel](https://github.com/mikeschinkel).
-* Fixes a bug in the UI that happend when `do_shortcode` was run on category descriptions in the admin list. Additionally, fixes rendering of shortcodes in category descriptions on the frontend.
-* Fixes a bug where saved templates in Search Appearance would be saved incorrectly into the database, resulting in them never being loaded when editing a post, page, etc. This meant that the default template would always be used.
-* Fixes a bug where the "Tagline" / `%%sitedesc%%` snippet editor variable was not selectable in the Search Appearance settings.
-* Fixes a bug where the newsletter signup in the configuration wizard would not work.
+
+* Fixes a bug where an empty feed would be available for non-existing pages. Props [stodorovic](https://github.com/stodorovic).
+* Prevents `vendor_prefix/j4mie/idiorm/demo.php` from being included in the release.
 
 Other:
-* Moves some snippet variables to only appear within specific editors. Adds a filter `wpseo_editor_specific_replace_vars` to make this pluggable.
-* Adds the white background to the template of media on the Search Appearance page.
-* Changes feedback in the keyword density assessment to make it more explicit that synonyms are not taken into consideration when calculating the score.
-* Shows a notification with the message that you should check your post type archive settings when these are possibly reset to their defaults in 7.7 or 7.8.
+
+* Props to [Kingdutch](https://github.com/Kingdutch) for helping improve our open source content analysis library.
+* Improves the redirect upsell when creating redirects in the search console overview.
 
 = Earlier versions =
 
