@@ -3601,3 +3601,191 @@
  Tue, 23 Oct 2018 12:27:32 -0500 INFO : [_sendRequest] (/home/forge/thevirtualnephrologist.com/wp-content/plugins/authorize_net_payment_terminal/authorize/vendor/authorizenet/authorizenet/lib/net/authorize/util/HttpClient.php : 96) - Response from AnetApi: ﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1540315651</refId><messages><resultCode>Error</resultCode><message><code>E00006</code><text>The API user name is invalid or not present.</text></message></messages><transactionResponse /></createTransactionResponse>
  Tue, 23 Oct 2018 12:27:32 -0500 INFO : [execute] (/home/forge/thevirtualnephrologist.com/wp-content/plugins/authorize_net_payment_terminal/authorize/vendor/authorizenet/authorizenet/lib/net/authorize/api/controller/base/ApiOperationBase.php : 128) - Response De-Serialization Begin
  Tue, 23 Oct 2018 12:27:32 -0500 INFO : [execute] (/home/forge/thevirtualnephrologist.com/wp-content/plugins/authorize_net_payment_terminal/authorize/vendor/authorizenet/authorizenet/lib/net/authorize/api/controller/base/ApiOperationBase.php : 130) - Response De-Serialization End
+ Mon, 25 Mar 2019 16:10:00 -0500 INFO : [execute] (/home/forge/thevirtualnephrologist.com/wp-content/plugins/authorize_net_payment_terminal/authorize/vendor/authorizenet/authorizenet/lib/net/authorize/api/controller/base/ApiOperationBase.php : 114) - Request Serialization Begin
+ Mon, 25 Mar 2019 16:10:00 -0500 DEBUG : [execute] (/home/forge/thevirtualnephrologist.com/wp-content/plugins/authorize_net_payment_terminal/authorize/vendor/authorizenet/authorizenet/lib/net/authorize/api/controller/base/ApiOperationBase.php : 115) - net\authorize\api\contract\v1\CreateTransactionRequest Object
+(
+    [transactionRequest:net\authorize\api\contract\v1\CreateTransactionRequest:private] => net\authorize\api\contract\v1\TransactionRequestType Object
+        (
+            [transactionType:net\authorize\api\contract\v1\TransactionRequestType:private] => authCaptureTransaction
+            [amount:net\authorize\api\contract\v1\TransactionRequestType:private] => 10
+            [currencyCode:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [payment:net\authorize\api\contract\v1\TransactionRequestType:private] => net\authorize\api\contract\v1\PaymentType Object
+                (
+                    [creditCard:net\authorize\api\contract\v1\PaymentType:private] => net\authorize\api\contract\v1\CreditCardType Object
+                        (
+                            [cardCode:net\authorize\api\contract\v1\CreditCardType:private] => xxxx
+                            [isPaymentToken:net\authorize\api\contract\v1\CreditCardType:private] => 
+                            [cryptogram:net\authorize\api\contract\v1\CreditCardType:private] => 
+                            [cardNumber:net\authorize\api\contract\v1\CreditCardSimpleType:private] => xxxx-4395
+                            [expirationDate:net\authorize\api\contract\v1\CreditCardSimpleType:private] => xxxx
+                        )
+
+                    [bankAccount:net\authorize\api\contract\v1\PaymentType:private] => 
+                    [trackData:net\authorize\api\contract\v1\PaymentType:private] => 
+                    [encryptedTrackData:net\authorize\api\contract\v1\PaymentType:private] => 
+                    [payPal:net\authorize\api\contract\v1\PaymentType:private] => 
+                    [opaqueData:net\authorize\api\contract\v1\PaymentType:private] => 
+                    [emv:net\authorize\api\contract\v1\PaymentType:private] => 
+                )
+
+            [profile:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [solution:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [callId:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [terminalNumber:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [authCode:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [refTransId:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [splitTenderId:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [order:net\authorize\api\contract\v1\TransactionRequestType:private] => net\authorize\api\contract\v1\OrderType Object
+                (
+                    [invoiceNumber:net\authorize\api\contract\v1\OrderType:private] => INV_3140271
+                    [description:net\authorize\api\contract\v1\OrderType:private] => Medical payment
+                )
+
+            [lineItems:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [tax:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [duty:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [shipping:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [taxExempt:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [poNumber:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [customer:net\authorize\api\contract\v1\TransactionRequestType:private] => net\authorize\api\contract\v1\CustomerDataType Object
+                (
+                    [type:net\authorize\api\contract\v1\CustomerDataType:private] => individual
+                    [id:net\authorize\api\contract\v1\CustomerDataType:private] => 
+                    [email:net\authorize\api\contract\v1\CustomerDataType:private] => rafaelmatiaskdosh@gmail.com
+                    [driversLicense:net\authorize\api\contract\v1\CustomerDataType:private] => 
+                    [taxId:net\authorize\api\contract\v1\CustomerDataType:private] => 
+                )
+
+            [billTo:net\authorize\api\contract\v1\TransactionRequestType:private] => net\authorize\api\contract\v1\CustomerAddressType Object
+                (
+                    [phoneNumber:net\authorize\api\contract\v1\CustomerAddressType:private] => 
+                    [faxNumber:net\authorize\api\contract\v1\CustomerAddressType:private] => 
+                    [email:net\authorize\api\contract\v1\CustomerAddressType:private] => rafaelmatiaskdosh@gmail.com
+                    [firstName:net\authorize\api\contract\v1\NameAndAddressType:private] => santos
+                    [lastName:net\authorize\api\contract\v1\NameAndAddressType:private] => asdasd
+                    [company:net\authorize\api\contract\v1\NameAndAddressType:private] => 
+                    [address:net\authorize\api\contract\v1\NameAndAddressType:private] => america, 52, 52
+                    [city:net\authorize\api\contract\v1\NameAndAddressType:private] => santos
+                    [state:net\authorize\api\contract\v1\NameAndAddressType:private] => PA
+                    [zip:net\authorize\api\contract\v1\NameAndAddressType:private] => 362555848
+                    [country:net\authorize\api\contract\v1\NameAndAddressType:private] => BR
+                )
+
+            [shipTo:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [customerIP:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [cardholderAuthentication:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [retail:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [employeeId:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [transactionSettings:net\authorize\api\contract\v1\TransactionRequestType:private] => Array
+                (
+                    [0] => net\authorize\api\contract\v1\SettingType Object
+                        (
+                            [settingName:net\authorize\api\contract\v1\SettingType:private] => duplicateWindow
+                            [settingValue:net\authorize\api\contract\v1\SettingType:private] => 60
+                        )
+
+                )
+
+            [userFields:net\authorize\api\contract\v1\TransactionRequestType:private] => Array
+                (
+                    [0] => net\authorize\api\contract\v1\UserFieldType Object
+                        (
+                            [name:net\authorize\api\contract\v1\UserFieldType:private] => Patient Account Number
+                            [value:net\authorize\api\contract\v1\UserFieldType:private] => 
+                        )
+
+                    [1] => net\authorize\api\contract\v1\UserFieldType Object
+                        (
+                            [name:net\authorize\api\contract\v1\UserFieldType:private] => Patient Name
+                            [value:net\authorize\api\contract\v1\UserFieldType:private] => santos
+                        )
+
+                )
+
+            [surcharge:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [merchantDescriptor:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [subMerchant:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+            [tip:net\authorize\api\contract\v1\TransactionRequestType:private] => 
+        )
+
+    [merchantAuthentication:net\authorize\api\contract\v1\ANetApiRequestType:private] => net\authorize\api\contract\v1\MerchantAuthenticationType Object
+        (
+            [name:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+            [transactionKey:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+            [sessionToken:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+            [password:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+            [impersonationAuthentication:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+            [fingerPrint:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+            [clientKey:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+            [accessToken:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+            [mobileDeviceId:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+        )
+
+    [clientId:net\authorize\api\contract\v1\ANetApiRequestType:private] => sdk-php-1.9.4
+    [refId:net\authorize\api\contract\v1\ANetApiRequestType:private] => ref1553548200
+)
+
+ Mon, 25 Mar 2019 16:10:00 -0500 INFO : [execute] (/home/forge/thevirtualnephrologist.com/wp-content/plugins/authorize_net_payment_terminal/authorize/vendor/authorizenet/authorizenet/lib/net/authorize/api/controller/base/ApiOperationBase.php : 118) - Request  Serialization End
+ Mon, 25 Mar 2019 16:10:00 -0500 INFO : [_sendRequest] (/home/forge/thevirtualnephrologist.com/wp-content/plugins/authorize_net_payment_terminal/authorize/vendor/authorizenet/authorizenet/lib/net/authorize/util/HttpClient.php : 75) -  Url: https://api2.authorize.net/xml/v1/request.api
+ Mon, 25 Mar 2019 16:10:00 -0500 INFO : [_sendRequest] (/home/forge/thevirtualnephrologist.com/wp-content/plugins/authorize_net_payment_terminal/authorize/vendor/authorizenet/authorizenet/lib/net/authorize/util/HttpClient.php : 77) - Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<createTransactionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[]]></name>
+    <transactionKey>xxxx</transactionKey>
+  </merchantAuthentication>
+  <clientId><![CDATA[sdk-php-1.9.4]]></clientId>
+  <refId><![CDATA[ref1553548200]]></refId>
+  <transactionRequest>
+    <transactionType><![CDATA[authCaptureTransaction]]></transactionType>
+    <amount>10</amount>
+    <payment>
+      <creditCard>
+        <cardNumber>xxxx-4395</cardNumber>
+        <expirationDate>xxxx</expirationDate>
+        <cardCode>xxxx</cardCode>
+      </creditCard>
+    </payment>
+    <order>
+      <invoiceNumber><![CDATA[INV_3140271]]></invoiceNumber>
+      <description><![CDATA[Medical payment]]></description>
+    </order>
+    <customer>
+      <type><![CDATA[individual]]></type>
+      <id><![CDATA[]]></id>
+      <email><![CDATA[rafaelmatiaskdosh@gmail.com]]></email>
+    </customer>
+    <billTo>
+      <firstName><![CDATA[santos]]></firstName>
+      <lastName><![CDATA[asdasd]]></lastName>
+      <address><![CDATA[america, 52, 52]]></address>
+      <city><![CDATA[santos]]></city>
+      <state><![CDATA[PA]]></state>
+      <zip><![CDATA[362555848]]></zip>
+      <country><![CDATA[BR]]></country>
+      <email><![CDATA[rafaelmatiaskdosh@gmail.com]]></email>
+    </billTo>
+    <transactionSettings>
+      <setting>
+        <settingName><![CDATA[duplicateWindow]]></settingName>
+        <settingValue><![CDATA[60]]></settingValue>
+      </setting>
+    </transactionSettings>
+    <userFields>
+      <userField>
+        <name><![CDATA[Patient Account Number]]></name>
+        <value><![CDATA[]]></value>
+      </userField>
+      <userField>
+        <name><![CDATA[Patient Name]]></name>
+        <value><![CDATA[santos]]></value>
+      </userField>
+    </userFields>
+  </transactionRequest>
+</createTransactionRequest>
+
+ Mon, 25 Mar 2019 16:10:00 -0500 INFO : [_sendRequest] (/home/forge/thevirtualnephrologist.com/wp-content/plugins/authorize_net_payment_terminal/authorize/vendor/authorizenet/authorizenet/lib/net/authorize/util/HttpClient.php : 89) - Sending 'XML' Request type
+ Mon, 25 Mar 2019 16:10:00 -0500 INFO : [_sendRequest] (/home/forge/thevirtualnephrologist.com/wp-content/plugins/authorize_net_payment_terminal/authorize/vendor/authorizenet/authorizenet/lib/net/authorize/util/HttpClient.php : 94) - Sending http request via Curl
+ Mon, 25 Mar 2019 16:10:00 -0500 INFO : [_sendRequest] (/home/forge/thevirtualnephrologist.com/wp-content/plugins/authorize_net_payment_terminal/authorize/vendor/authorizenet/authorizenet/lib/net/authorize/util/HttpClient.php : 96) - Response from AnetApi: ﻿<?xml version="1.0" encoding="utf-8"?><createTransactionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1553548200</refId><messages><resultCode>Error</resultCode><message><code>E00006</code><text>The API user name is invalid or not present.</text></message></messages><transactionResponse /></createTransactionResponse>
+ Mon, 25 Mar 2019 16:10:00 -0500 INFO : [execute] (/home/forge/thevirtualnephrologist.com/wp-content/plugins/authorize_net_payment_terminal/authorize/vendor/authorizenet/authorizenet/lib/net/authorize/api/controller/base/ApiOperationBase.php : 128) - Response De-Serialization Begin
+ Mon, 25 Mar 2019 16:10:00 -0500 INFO : [execute] (/home/forge/thevirtualnephrologist.com/wp-content/plugins/authorize_net_payment_terminal/authorize/vendor/authorizenet/authorizenet/lib/net/authorize/api/controller/base/ApiOperationBase.php : 130) - Response De-Serialization End
