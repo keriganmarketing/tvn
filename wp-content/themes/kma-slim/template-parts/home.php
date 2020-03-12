@@ -18,7 +18,7 @@ include(locate_template('template-parts/sections/top.php'));
                 <div class="columns is-multiline">
                     <div class="column is-6 video-holder is-first-desktop">
                         <div class="home-video-container image is-16by9">
-                            <iframe width="483" height="243" src="https://www.youtube.com/embed/ItM4_3fsknI?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                            <iframe title="tvn youtube video" width="483" height="243" src="https://www.youtube.com/embed/ItM4_3fsknI?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="column is-6 home-headline has-text-centered has-text-left-desktop">
