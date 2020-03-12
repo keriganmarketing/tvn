@@ -58,7 +58,7 @@ use Includes\Modules\Social\SocialSettingsPage;
             $socialIcons = $socialLinks->getSocialLinks('svg', 'circle');
             if (is_array($socialIcons)) {
                 foreach ($socialIcons as $socialId => $socialLink) {
-                    echo '<a class="' . $socialId . '" href="' . $socialLink[0] . '" target="_blank" >' . $socialLink[1] . '</a>';
+                    echo '<a alt="social icon" class="' . $socialId . '" href="' . $socialLink[0] . '" target="_blank" >' . $socialLink[1] . '</a>';
                 }
             }
             ?>
