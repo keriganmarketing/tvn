@@ -66,7 +66,7 @@ include(locate_template('template-parts/sections/top.php'));
             <div class="amazon-banner">
                 <div class="columns is-8 is-multiline is-centered ">
                     <p align="center">
-                        <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=health&banner=1ED27G51NNXJG1V3GNG2&f=ifr&linkID=d42effbd8726f3ad9096672285e5eb24&t=25075911-20&tracking_id=25075911-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" display="block"></iframe>
+                        <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=42&l=ur1&category=health&banner=1P6S277C4M6XB9804C82&f=ifr&linkID=7a21a8839010e29e6fc386553f04dd2a&t=25075911-20&tracking_id=25075911-20" width="234" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
                     </p>    
                 </div>
             </div>   
