@@ -85,7 +85,7 @@ include(locate_template('template-parts/sections/top.php'));
                     </div>
                     <div class="column is-5 doctor-photo-container">
                         <div class="doctor-photo-container">
-                            <img alt="dr.rifai" src="<?= get_template_directory_uri() . '/img/dr-rifai@2x.png'; ?>">
+                            <img alt="dr.rifai" src="<?= get_template_directory_uri() . '/img/Dr-34.jpg'; ?>">
                         </div>
                     </div>
                 </div>

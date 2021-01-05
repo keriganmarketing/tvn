@@ -581,6 +581,11 @@ body {
           margin-top: 2rem;
         }
       }
+      .doctor-photo-container img{
+        border-radius: 1rem;
+        border:2px solid #FFF;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
     //}
 
     .doctor-bio-container {
