@@ -114,8 +114,8 @@ class Leads
 
         if (filter_var($client, FILTER_VALIDATE_IP)) {
             return $client;}
-        elseif (filter_var($forward, FILTER_VALIDATE_IP)) {
-            return $forward;}
+        elseif (filter_var($forwarded, FILTER_VALIDATE_IP)) {
+            return $forwarded;}
         else {
             return $remote;}
     } 

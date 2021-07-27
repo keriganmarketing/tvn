@@ -12,6 +12,7 @@ use Includes\Modules\Helpers\PageField;
 use KeriganSolutions\CPT\CustomPostType;
 use Includes\Modules\Leads\SimpleContact;
 use Includes\Modules\Leads\ManualSubscribe;
+use Includes\Modules\Leads\ConsultRequest;
 use Includes\Modules\Social\SocialSettingsPage;
 
 require('vendor/autoload.php');
@@ -39,6 +40,10 @@ $subscribe->setupShortcode();
 $contact = new SimpleContact();
 $contact->setupAdmin();
 $contact->setupShortcode();
+
+$consult = new ConsultRequest();
+$consult->setupadmin();
+$consult->setupshortcode();
 
 add_action( 'after_setup_theme', function() {
 
