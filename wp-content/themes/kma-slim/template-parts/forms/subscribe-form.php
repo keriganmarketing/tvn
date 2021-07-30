@@ -1,6 +1,6 @@
 <div class="subscribe-form">
     <form method="post" >
-        <input type="text" name="sec" value="" class="sec-form-code" style="position: absolute; left:-10000px; top:-10000px; height:0px; width:0px;" >
+        <input type="text" name="sec-validation-feild" value="" class="sec-form-code" style="position: absolute; left:-10000px; top:-10000px; height:0px; width:0px;" >
         <div class="columns is-multiline">
             <div class="column is-3">
                 <input type="text" name="first_name" class="input" placeholder="First Name" required>
