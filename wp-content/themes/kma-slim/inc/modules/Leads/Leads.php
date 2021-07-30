@@ -135,7 +135,7 @@ class Leads
             'referrer'             => $dataSubmitted['referrer'],
             'comment_author'       => $dataSubmitted['full_name'],
             'comment_author_email' => $dataSubmitted['email_address'],
-            'comment_content'      => $dataSubmitted['message']
+            // 'comment_content'      => $dataSubmitted['message']
         ], $_SERVER);
 
         $spam = $result->isSpam();
