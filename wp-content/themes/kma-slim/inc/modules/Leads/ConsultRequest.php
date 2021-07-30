@@ -101,7 +101,7 @@ class ConsultRequest extends Leads
         if($this->handleLead($_POST)){
             echo '<message title="Success" class="is-success">Thank you for requesting a virtual consultation with Dr. Rifai. Please download the <a href="https://thevirtualnephrologist.com/wp-content/uploads/2021/07/TVN-New-Patient-Packet-Complete.pdf">New Patient Packet file</a>. Once downloaded, please fill it out and fax to (850)914-3004 and then keep them safe as your copy. Once we receive your fax Dr. Rifai will contact you to set up your appointment.</message>';
         }else{
-            echo '<message title="Error" class="is-danger">There was an error with your submission. Please go back and review the following problems:<br><ul>';
+            echo '<message title="Error" class="is-danger">There was an error with your submission. Please correct the following issues:<br><ul>';
                 foreach($this->errors as $error){
                     echo '<li>'.$error.'</li>';
                 }
