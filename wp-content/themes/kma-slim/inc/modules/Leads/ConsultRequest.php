@@ -61,7 +61,6 @@ class ConsultRequest extends Leads
 
         if (!$dataSubmitted['terms']) {
             $passCheck = false;
-            echo "The Terms of Services checkbox was not checked. Please go back and review the terms and accept by clicking on the box before submitting. Thank you.";
         }
         
         if (function_exists('akismet_verify_key') && !empty(akismet_get_key())){
@@ -89,7 +88,7 @@ class ConsultRequest extends Leads
             if($this->handleLead($_POST)){
                 return '<message title="Success" class="is-success">Thank you for requesting a virtual consultation with Dr. Rifai. Please download the <a href="https://thevirtualnephrologist.com/wp-content/uploads/2021/07/TVN-New-Patient-Packet-Complete.pdf">New Patient Packet file</a>. Once downloaded, please fill it out and fax to (850)914-3004 and then keep them safe as your copy. Once we receive your fax Dr. Rifai will contact you to set up your appointment.</message>';
             }else{
-                return '<message title="Error" class="is-danger">There was an error with your submission. Please try again.</message>';
+                return '<message title="Error" class="is-danger">There was an error with your submission. The Terms of Services checkbox was not checked. Please go back and review the terms and accept by clicking on the box before submitting. Please try again. Thank you.</message>';
                 echo $form;
                 return ob_get_clean();
             }
@@ -129,7 +128,7 @@ class ConsultRequest extends Leads
         $emailAddress  = (isset($leadInfo['email_address']) ? $leadInfo['email_address'] : null);
         $fullName      = (isset($leadInfo['full_name']) ? $leadInfo['full_name'] : null);
         $rifaiIntro    = '<p>A patient has requested a virtual consultation and has been provided with the "New Patient Packet" which contains the following forms:</p><ol><li>Comprehensive Medical History</li><li>TVN HIPAA &amp; Privacy Notice</li><li>TVN HIPAA &amp; Privacy Notice Receipt</li></ol><p>The patient has also been provided with your office fax number and instructions to fax the completed packet to you.</p><p>Please check your fax machine for their completed paperwork and reach out to set up their virtual consultation appointment.<p><p>The Prosective Patient Details are below:</P>';
-        $patientIntro  = '<p>Thank you for requesting a virtual consultation with Dr. Rifai.</p><p>Please download the <a href="https://thevirtualnephrologist.com/wp-content/uploads/2021/07/TVN-New-Patient-Packet-Complete.pdf">New Patient Packet pdf file</a>. Once downloaded, please fill out the information as complete as possible and fax to (850)914-3004. Be sure to keep your copies safe for use as a reference/record. Once we receive your fax we will review the information you have provided and get back with you as soon as we can.</p><p>If you do not have Adobe Reader, you can download it from <a href="https://get.adobe.com/reader/">https://get.adobe.com/reader/</a></p><p><strong>Important</strong>: All of our virtual consultations take place using Zoom to share our screen for your education. If you prefer a different Face to Face method, please let us know.</p><p>Zoom is free and you can join your appointment by going to <a href="https://zoom.us/">https://zoom.us/.</a>and entering the Meeting ID number that you will be provided with when your appointment is confirmed.<p>The information you provided to us is:</p></p>';
+        $patientIntro  = '<p>Thank you for requesting a virtual consultation with Dr. Rifai.</p><p>Please download the <a href="https://thevirtualnephrologist.com/wp-content/uploads/2021/07/TVN-New-Patient-Packet-Complete.pdf">New Patient Packet pdf file</a>. Once downloaded, please fill out the information as complete as possible and fax to (850)914-3004. Be sure to keep your copies safe for use as a reference/record. Once we receive your fax we will review the information you have provided and get back with you to schedule the most convenient time available.</p><p>If you do not have Adobe Reader, you can download it from <a href="https://get.adobe.com/reader/">https://get.adobe.com/reader/</a></p><p><strong>Important</strong>: All of our virtual consultations take place using Zoom to share our screen for your education. If you prefer a different Face to Face method, please let us know.</p><p>Zoom is free and you can join your appointment by going to <a href="https://zoom.us/">https://zoom.us/.</a>and entering the Meeting ID number that you will be provided with when your appointment is confirmed.<p>The information you provided to us is:</p></p>';
 
         $tableData = '';
         foreach ($this->additionalFields as $key => $var) {
