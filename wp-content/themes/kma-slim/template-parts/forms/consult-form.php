@@ -22,7 +22,7 @@
                 </label>
             </div>
             <div class="column is-12">
-                <button class="button is-primary" type="submit">submit request</button>
+                <button class="button is-primary" type="submit">request virtual consultation</button>
             </div>
         </div>
         <input type="text" name="sec-validation-feild" value="" class="sec-form-code" style="position: absolute; left:-10000px; top:-10000px; height:0px; width:0px;" >
