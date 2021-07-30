@@ -4,6 +4,8 @@ namespace Includes\Modules\Leads;
 
 class ConsultRequest extends Leads
 {
+    public $errors = [];
+
     public function __construct ()
     {
         parent::__construct ();
@@ -51,16 +53,21 @@ class ConsultRequest extends Leads
         $passCheck = true;
         if ($dataSubmitted['email_address'] == '') {
             $passCheck = false;
+            $this->errors[] = 'Email address is required';
+
         } elseif (!filter_var($dataSubmitted['email_address'], FILTER_VALIDATE_EMAIL) && !preg_match('/@.+\./',
                 $dataSubmitted['email_address'])) {
             $passCheck = false;
+            $this->errors[] = 'Email address is not formatted correctly';
         }
         if ($dataSubmitted['full_name'] == '') {
             $passCheck = false;
+            $this->errors[] = 'Both first name and last name are required';
         }
 
-        if (!$dataSubmitted['terms']) {
+        if ($dataSubmitted['terms'] != 'Terms Accepted') {
             $passCheck = false;
+            $this->errors[] = 'The Terms of Services checkbox was not checked';
         }
         
         if (function_exists('akismet_verify_key') && !empty(akismet_get_key())){
@@ -81,21 +88,29 @@ class ConsultRequest extends Leads
         if(isset($_SERVER['HTTP_REFERER'])){
             $form = str_replace('{{referrer}}', $_SERVER['HTTP_REFERER'], $form);
         }
+
         
         $formSubmitted = (isset($_POST['sec']) ? ($_POST['sec'] == '' ? true : false) : false );
+
         ob_start();
-        if($formSubmitted){
-            if($this->handleLead($_POST)){
-                return '<message title="Success" class="is-success">Thank you for requesting a virtual consultation with Dr. Rifai. Please download the <a href="https://thevirtualnephrologist.com/wp-content/uploads/2021/07/TVN-New-Patient-Packet-Complete.pdf">New Patient Packet file</a>. Once downloaded, please fill it out and fax to (850)914-3004 and then keep them safe as your copy. Once we receive your fax Dr. Rifai will contact you to set up your appointment.</message>';
-            }else{
-                return '<message title="Error" class="is-danger">There was an error with your submission. The Terms of Services checkbox was not checked. Please go back and review the terms and accept by clicking on the box before submitting. Please try again. Thank you.</message>';
-                echo $form;
-                return ob_get_clean();
-            }
-        }else{
+
+        if(!$formSubmitted){
             echo $form;
             return ob_get_clean();
         }
+
+        if($this->handleLead($_POST)){
+            echo '<message title="Success" class="is-success">Thank you for requesting a virtual consultation with Dr. Rifai. Please download the <a href="https://thevirtualnephrologist.com/wp-content/uploads/2021/07/TVN-New-Patient-Packet-Complete.pdf">New Patient Packet file</a>. Once downloaded, please fill it out and fax to (850)914-3004 and then keep them safe as your copy. Once we receive your fax Dr. Rifai will contact you to set up your appointment.</message>';
+        }else{
+            echo '<message title="Error" class="is-danger">There was an error with your submission. Please go back and review the following problems:<br><ul>';
+                foreach($this->errors as $error){
+                    echo '<li>'.$error.'</li>';
+                }
+            echo '</ul></message>';
+            echo $form;
+        }
+
+        return ob_get_clean();
     }
 
     public function setupShortcode()
