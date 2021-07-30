@@ -89,7 +89,7 @@ class ConsultRequest extends Leads
             $form = str_replace('{{referrer}}', $_SERVER['HTTP_REFERER'], $form);
         }
         
-        $formSubmitted = (isset($_POST['sec']) && $_POST['sec'] == '' ? true : false );
+        $formSubmitted = (isset($_POST['sec-validation-feild']) && $_POST['sec-validation-feild'] == '' ? true : false );
 
         ob_start();
 

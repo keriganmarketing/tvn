@@ -14,7 +14,7 @@ class ManualSubscribe extends Leads
     protected function showForm()
     {
         $form = file_get_contents(locate_template('template-parts/forms/subscribe-form.php'));
-        $formSubmitted = (isset($_POST['sec']) ? ($_POST['sec'] == '' ? true : false) : false );
+        $formSubmitted = (isset($_POST['sec-validation-feild']) ? ($_POST['sec-validation-feild'] == '' ? true : false) : false );
         ob_start();
         if($formSubmitted){
             if($this->handleLead($_POST)){

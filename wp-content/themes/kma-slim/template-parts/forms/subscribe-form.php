@@ -1,6 +1,5 @@
 <div class="subscribe-form">
     <form method="post" >
-        <input type="text" name="sec-validation-feild" value="" class="sec-form-code" style="position: absolute; left:-10000px; top:-10000px; height:0px; width:0px;" >
         <div class="columns is-multiline">
             <div class="column is-3">
                 <input type="text" name="first_name" class="input" placeholder="First Name" required>
@@ -15,5 +14,6 @@
                 <button class="button is-primary is-pulled-right" type="submit">subscribe</button>
             </div>
         </div>
+        <input type="text" name="sec-validation-feild" value="" class="sec-form-code" style="position: absolute; left:-10000px; top:-10000px; height:0px; width:0px;" >
     </form>
 </div>
