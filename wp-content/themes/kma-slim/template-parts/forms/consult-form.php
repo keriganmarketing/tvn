@@ -18,7 +18,7 @@
             <div class="custom-control custom-checkbox" style="margin: .5em 0 .5em 1em;">
                 <input id="terms-checkbox" name="terms" type="checkbox" value="Terms Accepted" class="custom-control-input">
                 <label for="terms-checkbox" class="tiny-text custom-control-label" >
-                    By checking this box, I agree that I have read the <a href="/terms-of-service/">Terms of Service</a> and <a href="/third-party-advertisements/">Third-Party Advertisements</a> agreements and that I accept the provisions of said agreements. If unwilling to consent, call <a href="tel:9293796953" style="text-decoration: underline;">929-379-6953</a> to learn more about our services. Other terms and conditions may apply.
+                    By checking this box, I agree that I have read the <a href="/terms-of-service/">Terms of Service</a> and <a href="/third-party-advertisements/">Third-Party Advertisements</a> agreements and that I accept the provisions of said agreements.
                 </label>
             </div>
             <div class="column is-12">
