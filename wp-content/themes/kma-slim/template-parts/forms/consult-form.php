@@ -5,7 +5,7 @@
         <?php if(isset($_SERVER['HTTP_REFERER'])){ ?>
         <input type="hidden" name="referrer" value="{{referrer}}" >
         <?php } ?>
-        <div class="columns is-multiline" style="font-size: 18px;">
+        <div class="columns is-multiline" style="font-size: 18px; font-weight:600;">
             <div class="column is-6">
                 <input type="text" name="first_name" class="input" placeholder="First Name" required>
             </div>
