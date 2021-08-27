@@ -53,26 +53,6 @@ include(locate_template('template-parts/sections/top.php'));
             </div>
         </div>
 
-        <!-- Code begin for Amazon Associate banner ads -->
-        <div class="section amazon-banner is-hidden-touch">
-            <div class="amazon-banner">
-                <div class="columns is-8 is-multiline is-centered ">
-                    <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=48&l=ur1&category=health&banner=0G5GGJ1N5H018KBVX3R2&f=ifr&linkID=dd19451d3cfc41343f6b89263e049e2d&t=25075911-20&tracking_id=25075911-20" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-                </div>
-            </div>
-        </div>   
-         
-        <div class="section amazon-banner is-hidden-desktop">
-            <div class="amazon-banner">
-                <div class="columns is-8 is-multiline is-centered ">
-                    <p align="center">
-                        <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=42&l=ur1&category=health&banner=1P6S277C4M6XB9804C82&f=ifr&linkID=7a21a8839010e29e6fc386553f04dd2a&t=25075911-20&tracking_id=25075911-20" width="234" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-                    </p>    
-                </div>
-            </div>   
-        </div>
-        <!-- Code end for Amazon Associate banner ads -->
-
         <div class="section doctor-bio">
             <div class="container pad">
                 <div class="columns is-8 is-multiline is-centered">
