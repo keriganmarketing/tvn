@@ -25,6 +25,7 @@
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-PCWV2XJ');</script>
     <!-- End Google Tag Manager -->
+    <script data-ad-client="ca-pub-1240279278924859" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <?php wp_head(); ?>
 </head>
 
