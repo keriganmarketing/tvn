@@ -20,7 +20,7 @@ $subhead = ($post->page_information_subhead != '' ? $post->page_information_subh
             </figure>
         </div>
         <div class="card-content">
-            <h2 class="title is-3"><?php echo $headline; ?></h2>
+            <h2 class="title is-primary"><?php echo $headline; ?></h2>
             <?php echo ($subhead!='' ? '<p class="subtitle">'.$subhead.'</p>' : null); ?>
             <?php the_excerpt(); ?>
         </div>

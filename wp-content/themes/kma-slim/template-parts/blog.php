@@ -32,6 +32,13 @@ include(locate_template('template-parts/sections/top.php'));
 
                 ?>
                 </div>
+                <div class="p-3 mb-lg-5" >
+                    <?php if(get_previous_posts_link()){ ?>
+                        <a class="nav-previous alignleft button is-primary" href="<?php get_previous_posts_link(); ?>" >Older Posts</a>
+                    <?php } if(get_next_posts_link()){ ?>
+                        <a class="nav-next alignright button is-primary" href="<?php get_next_posts_link(); ?>" >Newer Posts</a>
+                    <?php } ?>
+                </div>
             </div>
         </section>
     </article><!-- #post-## -->

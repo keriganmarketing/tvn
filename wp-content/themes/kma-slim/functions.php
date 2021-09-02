@@ -89,3 +89,34 @@ function getPageChildren($pageName)
 
     return $children;
 }
+
+// Remove JPEG compression.
+add_filter('jpeg_quality', function () {
+    return 100;
+}, 10, 2);
+
+// Adjust deault WP excerpts and read more
+function custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+function new_excerpt_more($more) {
+    return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+function tvn_add_oembed_filter($html, $url, $args) {
+	$classes = array();
+
+    // Add these classes to all embeds.
+    $classes = array(
+        'embed-responsive',
+        'embed-responsive-16by9',
+        'my-4'
+    );
+
+    $html = preg_replace( '/(width|height)="\d*"/', '', $html );
+
+    return '<div class="' . esc_attr( implode( ' ', $classes) ) . '">' . $html . '</div>';
+}
+add_filter('embed_oembed_html', 'tvn_add_oembed_filter', 10, 3);
