@@ -12,15 +12,14 @@ include(locate_template('template-parts/sections/top.php'));
 ?>
 <div id="mid" >
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <section class="hero is-light">
-            <div class="hero-body">
-                <div class="container">
-                    <h1 class="title"><?php echo $headline; ?></h1>
-                    <?php echo ($subhead!='' ? '<p class="subtitle">'.$subhead.'</p>' : null); ?>
-                </div>
+    <div class="sticky-header-pad support"></div>
+        <section class="support-header">
+            <div class="container">
+                <h1 class="title">From the Desk of Dr. Rifai</h1>
             </div>
         </section>
-        <section id="content" class="content section">
+        <?php include(locate_template('template-parts/sections/breadcrumbs.php')); ?>
+        <section id="content" class="section support">
             <div class="container">
                 <div class="columns is-multiline">
                 <?php

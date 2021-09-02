@@ -49,7 +49,7 @@ use Includes\Modules\Navwalker\BulmaNavwalker;
                             </div>
                             <div class="navbar-item seperator">|</div>
                             <div class="navbar-item">
-                                <a href="/shop/tvn-amazon-store/">Shop TVN</a>
+                                <a href="/blog/">Blog</a>
                             </div>
                             <div class="navbar-item seperator">|</div>
                             <div class="navbar-item">

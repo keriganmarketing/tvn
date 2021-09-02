@@ -14,28 +14,18 @@ $subhead = ($post->page_information_subhead != '' ? $post->page_information_subh
     <div class="card">
         <div class="card-image">
             <figure class="image is-16by3">
-            <img src="http://bulma.io/images/placeholders/640x360.png">
+                <a href="<?php echo get_the_permalink(); ?>" rel="prettyPhoto">
+                    <?php the_post_thumbnail('medium'); ?>
+                </a>
             </figure>
         </div>
         <div class="card-content">
-            <h2 class="title"><?php echo $headline; ?></h2>
+            <h2 class="title is-3"><?php echo $headline; ?></h2>
             <?php echo ($subhead!='' ? '<p class="subtitle">'.$subhead.'</p>' : null); ?>
-            <?php
-            the_content( sprintf(
-            /* translators: %s: Name of current post. */
-                wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'kmaevent' ), array( 'span' => array( 'class' => array() ) ) ),
-                the_title( '<span class="screen-reader-text">"', '"</span>', false )
-            ) );
-            ?>
+            <?php the_excerpt(); ?>
         </div>
         <div class="card-footer">
             <a class="card-footer-item" href="<?php echo get_the_permalink(); ?>">Read More</a>
-          <span class="card-footer-item" >
-              Share:&nbsp;
-              <a class="icon" href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-              <a class="icon" href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-              <a class="icon" href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
-          </span>
         </div>
     </div>
 </div>
