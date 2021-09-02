@@ -84,7 +84,7 @@ include(locate_template('template-parts/sections/top.php'));
                             }
                         ?>
                         <ul id="more-news" class="sidebarlinks">
-                        <li class="sidebar-link"><a class="button is-primary" href="/news-events/news/" title="All News">More Articles</a></li>
+                        <li class="sidebar-link"><a class="button is-primary" href="/blog/" title="All News">More Articles</a></li>
                         </ul>
                         <?php } ?>
                         
