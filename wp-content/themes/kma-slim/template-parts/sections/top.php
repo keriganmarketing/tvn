@@ -49,15 +49,15 @@ use Includes\Modules\Navwalker\BulmaNavwalker;
                             </div>
                             <div class="navbar-item seperator">|</div>
                             <div class="navbar-item">
+                                <a href="/shop/tvn-amazon-store/">Shop</a>
+                            </div>
+                            <div class="navbar-item seperator">|</div>
+                            <div class="navbar-item">
                                 <a href="/blog/">Blog</a>
                             </div>
                             <div class="navbar-item seperator">|</div>
                             <div class="navbar-item">
                                 <a href="/contact/">Contact</a>
-                            </div>
-                            <div class="navbar-item seperator">|</div>
-                            <div class="navbar-item">
-                                Connect:
                             </div>
                             <div class="navbar-item social-buttons">
                                 <div class="social has-text-left">
