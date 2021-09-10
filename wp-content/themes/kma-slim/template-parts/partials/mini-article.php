@@ -20,6 +20,7 @@ $subhead = ($post->page_information_subhead != '' ? $post->page_information_subh
             </figure>
         </div>
         <div class="card-content">
+            <em><?php echo date( 'F j, Y', strtotime(get_the_date())); ?></em>
             <h2><strong class="has-text-primary has-medium-font-size"><?php echo $headline; ?></strong></h2>
             <?php echo ($subhead!='' ? '<p class="subtitle">'.$subhead.'</p>' : null); ?>
             <?php the_excerpt(); ?>

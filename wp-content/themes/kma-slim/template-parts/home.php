@@ -115,6 +115,7 @@ include(locate_template('template-parts/sections/top.php'));
                                 </figure>
                             </div>
                             <div class="card-content">
+                                <em><?php echo date( 'F j, Y', strtotime($item->post_date)); ?></em>
                                 <h3><strong class="has-text-primary has-medium-font-size"><?php echo $item->post_title; ?></strong></h3>
                                 <?php echo get_the_excerpt($item->ID); ?>
                             </div>

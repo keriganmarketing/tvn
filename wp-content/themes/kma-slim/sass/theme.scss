@@ -590,6 +590,12 @@ body {
     overflow: hidden;
     box-shadow: 0 0 .75rem rgba(65, 0, 128, .25);
     border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+
+    .card-content {
+      flex-grow: 1;
+    }
   }
 
   .news-section {
