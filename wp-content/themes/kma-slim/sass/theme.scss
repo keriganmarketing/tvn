@@ -459,23 +459,24 @@ body {
       background-image: url('/wp-content/themes/kma-slim/img/header-image.png');
     }
     @media screen and (min-width: $desktop) {
-      padding: 1.5rem;
-    }
-    @media screen and (min-width: $widescreen) {
-      padding: 3.5rem 0 5.5rem;
-    }
-    @media screen and (min-width: $fullhd) {
       padding: 5rem 0 7rem;
     }
+    @media screen and (min-width: $widescreen) {
+      padding: 5rem 0 9rem;
+    }
     .video-holder {
+      display: flex;
       text-align: center;
-      justify-content: center;
+      justify-content: flex-end;
+
       @media screen and (max-width: $tablet){
         padding: 0 2rem;
         margin: 0 0 2rem;
       }
 
       .home-video-container {
+        margin-top: auto;
+        width: 100%;
         overflow: hidden;
         border-radius: 1rem;
         border:2px solid #FFF;
@@ -493,8 +494,16 @@ body {
       }
     }
 
-    .headline {
+    .hero-column-wrapper {
       height: 100%;
+      display: flex;
+      // align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .headline {
       display: flex;
       align-items: center;
       width: 100%;
@@ -505,9 +514,10 @@ body {
         text-shadow: 0 0 2px rgba(0,0,0,.5);
         font-size: 2.5em;
         width: 100%;
+        padding: 1rem 1.5rem;
 
         @media screen and (min-width: $desktop) {
-          padding: 3rem 1.5rem;
+          padding: 2rem 1.5rem;
           text-align: left;
           font-size: 3rem;
           line-height: 1.3em;
@@ -517,6 +527,24 @@ body {
           font-weight: $weight-bold;
           font-style: italic;
         }
+      }
+    }
+
+    .new-article {
+      background-color: rgba(65, 0, 128, 0.5);
+      border-radius: 1rem;
+      text-align: left;
+      margin: 0 1.25rem;
+      padding:1.5rem;
+      color: #FFF;
+
+      span {
+        text-decoration: underline;
+      }
+
+      a {
+        color: #FFF;
+        font-weight: bold;
       }
     }
   }
@@ -556,11 +584,34 @@ body {
 
   }
 
-  .amazon-banner {
-    background-color: #9FC3CC;
-    align-items: center;
+  .card.is-fullheight {
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 .75rem rgba(65, 0, 128, .25);
+    border: 2px solid white;
   }
 
+  .news-section {
+    background-color: #45337F;
+
+    h2 {
+      text-align: center;
+      color: #FFFFFF;
+      margin-bottom: 2rem;
+    }
+
+    .cta-section {
+      margin-top: 2rem;
+    }
+
+    .card.is-fullheight {
+      box-shadow: 0 0 .75rem rgba(0, 0, 0, .5);
+    }
+  
+  }
+
+  
   .doctor-bio {
     background-color: #547289;
     align-items: center;

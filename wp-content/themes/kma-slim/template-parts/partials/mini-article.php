@@ -11,7 +11,7 @@ $subhead = ($post->page_information_subhead != '' ? $post->page_information_subh
 
 ?>
 <div class="column is-4">
-    <div class="card">
+    <div class="card is-fullheight">
         <div class="card-image">
             <figure class="image is-16by3">
                 <a href="<?php echo get_the_permalink(); ?>" rel="prettyPhoto">
@@ -20,12 +20,12 @@ $subhead = ($post->page_information_subhead != '' ? $post->page_information_subh
             </figure>
         </div>
         <div class="card-content">
-            <h2 class="title is-primary"><?php echo $headline; ?></h2>
+            <h2><strong class="has-text-primary has-medium-font-size"><?php echo $headline; ?></strong></h2>
             <?php echo ($subhead!='' ? '<p class="subtitle">'.$subhead.'</p>' : null); ?>
             <?php the_excerpt(); ?>
         </div>
         <div class="card-footer">
-            <a class="card-footer-item" href="<?php echo get_the_permalink(); ?>">Read More</a>
+            <a class="card-footer-item" href="<?php echo get_the_permalink(); ?>">Read Article</a>
         </div>
     </div>
 </div>

@@ -61,7 +61,7 @@ include(locate_template('template-parts/sections/top.php'));
                     <div class="column is-12 is-4-desktop" style="padding: 0 1.5rem;">
                     <?php
                         $news = get_posts(array(
-                            'posts_per_page' => $a['limit'],
+                            'posts_per_page' => 5,
                             'exclude'        => $post->ID,
                             'offset'         => 0,
                             'order'          => 'DESC',
