@@ -44,7 +44,6 @@ include(locate_template('template-parts/sections/top.php'));
                             </div>
                             <div class="new-article" >
                                 <p>
-                                    <em>Posted <?php echo date( 'F j, Y', strtotime($recent->post_date)); ?>:</em><br> 
                                     <a href="<?php echo get_the_permalink($recent->ID); ?>"><?php echo get_the_title($recent->ID); ?>...<br>
                                     <span>read the full article</span></a>
                                 </p>
