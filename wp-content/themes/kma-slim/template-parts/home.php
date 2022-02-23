@@ -45,7 +45,7 @@ include(locate_template('template-parts/sections/top.php'));
                             <div class="new-article" >
                                 <p>
                                     <a href="<?php echo get_the_permalink($recent->ID); ?>"><?php echo get_the_title($recent->ID); ?>...<br>
-                                    <span>read the full article</span></a>
+                                    <span>Watch this video</span></a>
                                 </p>
                             </div>
                         </div>
