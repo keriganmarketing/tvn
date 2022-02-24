@@ -313,6 +313,7 @@ class Leads
 
             $defaults = array_merge(
                 [
+                    'cb'            => '<input type="checkbox" />',
                     'title'         => 'Name',
                     'email_address' => 'Email',
                     'phone_number'  => 'Phone Number',
