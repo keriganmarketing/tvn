@@ -37,10 +37,6 @@ $subscribe = new ManualSubscribe();
 $subscribe->setupAdmin();
 $subscribe->setupShortcode();
 
-$contact = new SimpleContact();
-$contact->setupAdmin();
-$contact->setupShortcode();
-
 $consult = new ConsultRequest();
 $consult->setupadmin();
 $consult->setupshortcode();

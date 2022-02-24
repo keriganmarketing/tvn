@@ -341,17 +341,20 @@ class Leads
         //Assigns values to columns
         add_action('manage_' . $this->uglify($this->postType) . '_posts_custom_column', function ($column_name, $post_ID) {
             if($column_name != 'title' && $column_name != 'date'){
+
+                $value = get_post_meta($post_ID, 'lead_info_' . $column_name, true);
+
                 switch ($column_name) {
                     case 'email_address':
-                        $email_address = get_post_meta($post_ID, 'lead_info_email_address', true);
-                        echo( isset($email_address) ? '<a href="mailto:' . $email_address . '" >' . $email_address . '</a>' : null);
+                        echo isset($value) ? '<a href="mailto:' . $value . '" >' . $value . '</a>' : null;
                         break;
+
                     case 'phone_number':
-                        $phone_number = get_post_meta($post_ID, 'lead_info_phone_number', true);
-                        echo(isset($phone_number) ? '<a href="tel:' . $phone_number . '" >' . $phone_number . '</a>' : null);
+                        echo isset($value) ? '<a href="tel:' . $value . '" >' . $value . '</a>' : null;
                         break;
+
                     default:
-                        echo get_post_meta($post_ID, 'lead_info_' . $column_name, true);
+                        echo $value;
                 }
             }
         }, 0, 2);
