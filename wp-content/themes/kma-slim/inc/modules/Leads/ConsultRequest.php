@@ -70,10 +70,8 @@ class ConsultRequest extends Leads
             $this->errors[] = 'The Terms of Services checkbox was not checked';
         }
         
-        if (function_exists('akismet_verify_key') && !empty(akismet_get_key())){
-            if ($this->checkSpam($dataSubmitted)){
-                $passCheck = false;
-            }
+        if (function_exists('akismet_verify_key')){
+            $passCheck = $this->checkSpam($dataSubmitted);
         }
 
         return $passCheck;

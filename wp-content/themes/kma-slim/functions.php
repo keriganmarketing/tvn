@@ -30,12 +30,13 @@ $layouts->createSidebarSelector();
 $layouts->addSidebar('Featured Image Sidebar');
 $layouts->addSidebar('Section Anchor Sidebar');
 
-$leads = new SimpleContact();
-$leads->setupAdmin();
-
 $subscribe = new ManualSubscribe();
 $subscribe->setupAdmin();
 $subscribe->setupShortcode();
+
+$contact = new SimpleContact();
+$contact->setupAdmin();
+$contact->setupShortcode();
 
 $consult = new ConsultRequest();
 $consult->setupadmin();
