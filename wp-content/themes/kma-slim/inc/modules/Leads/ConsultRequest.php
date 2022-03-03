@@ -15,9 +15,7 @@ class ConsultRequest extends Leads
             ]
         );
         parent::set('postType', 'Consult Submission');
-        parent::set('adminEmail', 'websites@kerigan.com');
-
-        // parent::set('adminEmail', 'thevirtualnephrologist@gmail.com');
+        parent::set('adminEmail', 'thevirtualnephrologist@gmail.com');
        
         $this->assembleLeadData([
             //'name' => 'label'
