@@ -6,13 +6,26 @@ use KeriganSolutions\CPT\CustomPostType;
 
 class Leads
 {
-    protected $postType;
-    public    $adminEmail;
-    public    $domain;
-    public    $ccEmail;
-    public    $bccEmail;
-    public    $additionalFields;
-    public    $siteName;
+    public    $postType            = 'Lead';
+    public    $adminEmail          = 'bryan@kerigan.com';
+    public    $domain              = 'thevirtualnephrologist.com';
+    public    $ccEmail             = '';
+    public    $bccEmail            = 'support@kerigan.com';
+    public    $additionalFields    = [];
+    public    $shortcode           = 'contact-form';
+    public    $successMessage      = 'Success';
+    public    $formFileName        = 'contact-form';
+    
+    public    $fromName            = 'TVN Website';
+    public    $fromEmail           = 'notifications@mg.thevirtualnephrologist.com';
+
+    public    $subjectLine         = 'New lead submitted on website';
+    public    $emailHeadline       = 'You have a new lead from the website';
+    public    $emailText           = '<p style="font-size:18px; color:black;" >A lead was received from the website. Details are below:</p>';
+
+    public    $receiptSubjectLine  = 'Thank you for contacting The Virtual Nephrologist';
+    public    $receiptHeadline     = 'Your website submission has been received';
+    public    $receiptText         = '<p style="font-size:18px; color:black;" >We\'ll review the information you\'ve provided and get back with you as soon as we can.</p>';
 
     /**
      * Leads constructor.
@@ -22,28 +35,8 @@ class Leads
     {
         date_default_timezone_set('America/Chicago');
 
-        $this->postType   = 'Lead';
-        $this->domain     = 'thevirtualnephrologist.com';
-
-        //separate multiple email addresses with a ';'
-        $this->adminEmail = 'bryan@kerigan.com';
-        $this->ccEmail    = ''; //Admin email only
-        $this->bccEmail   = 'support@kerigan.com';
-
         //use this to merge in additional fields
-        $this->assembleLeadData([
-            //'name' => 'label'
-        ]);
-    }
-
-    protected function set($var, $value)
-    {
-        $this->$var = $value;
-    }
-
-    protected function get($var)
-    {
-        return $this->$var;
+        $this->assembleLeadData();
     }
 
     protected function uglify($var){
@@ -58,6 +51,45 @@ class Leads
     {
         $this->createPostType();
         $this->createAdminColumns();
+    }
+
+    public function setupShortcode()
+    {
+        add_shortcode( $this->shortcode, function( $atts ){
+            return $this->showForm();
+        } );
+    }
+
+    protected function showForm()
+    {
+        $form = file_get_contents(locate_template('template-parts/forms/'.$this->formFileName.'.php'));
+        $form = str_replace('{{user-agent}}', $_SERVER['HTTP_USER_AGENT'], $form);
+		$form = str_replace('{{ip-address}}', $this->getIP(), $form);
+        if(isset($_SERVER['HTTP_REFERER'])){
+            $form = str_replace('{{referrer}}', $_SERVER['HTTP_REFERER'], $form);
+        }
+        
+        $formSubmitted = (isset($_POST['sec-validation-feild']) && $_POST['sec-validation-feild'] == '' ? true : false );
+
+        ob_start();
+
+        if(!$formSubmitted){
+            echo $form;
+            return ob_get_clean();
+        }
+
+        if($this->handleLead($_POST)){
+            echo '<message title="Success" class="is-success">'.$this->successMessage.'</message>';
+        }else{
+            echo '<message title="Error" class="is-danger">There was an error with your submission. Please correct the following issues:<br><ul>';
+                foreach($this->errors as $error){
+                    echo '<li>'.$error.'</li>';
+                }
+            echo '</ul></message>';
+            echo $form;
+        }
+
+        return ob_get_clean();
     }
 
     /**
@@ -81,7 +113,7 @@ class Leads
         return true;
     }
 
-    /*
+/*
      * Validate certain data types on the backend
      * @param array $dataSubmitted
      * @return boolean $passCheck
@@ -92,14 +124,18 @@ class Leads
         $passCheck = true;
         if ($dataSubmitted['email_address'] == '') {
             $passCheck = false;
+            $this->errors[] = 'Email address is required';
+
         } elseif (!filter_var($dataSubmitted['email_address'], FILTER_VALIDATE_EMAIL) && !preg_match('/@.+\./',
                 $dataSubmitted['email_address'])) {
             $passCheck = false;
+            $this->errors[] = 'Email address is not formatted correctly';
         }
         if ($dataSubmitted['full_name'] == '') {
             $passCheck = false;
+            $this->errors[] = 'Both first name and last name are required';
         }
-
+        
         if (function_exists('akismet_verify_key')){
             $passCheck = $this->checkSpam($dataSubmitted);
         }
@@ -130,14 +166,23 @@ class Leads
         // data package to be delivered to Akismet
         $data = array(
             'comment_author_email'  => $dataSubmitted['email_address'],
-            'user_ip'               => $dataSubmitted['ip_address'],
-            'user_agent'            => $dataSubmitted['user_agent'],
-            'referrer'              => $dataSubmitted['referrer'],
             'blog'                  => site_url(),
             'blog_lang'             => 'en_US',
             'blog_charset'          => 'UTF-8',
             'is_test'               => TRUE,
         );
+
+        if(isset($dataSubmitted['ip_address'])){
+            $data['comment_author'] = $dataSubmitted['ip_address'];
+        }
+
+        if(isset($dataSubmitted['user_agent'])){
+            $data['comment_author'] = $dataSubmitted['user_agent'];
+        }
+
+        if(isset($dataSubmitted['referrer'])){
+            $data['comment_author'] = $dataSubmitted['referrer'];
+        }
 
         if(isset($dataSubmitted['full_name'])){
             $data['comment_author'] = $dataSubmitted['full_name'];
@@ -255,13 +300,13 @@ class Leads
         $this->sendEmail(
             [
                 'to'        => $this->adminEmail,
-                'from'      => get_bloginfo() . ' <noreply@' . $this->domain . '>',
-                'subject'   => $this->postType . ' submitted on website',
+                'from'      => $this->fromName . ' <'. $this->fromEmail . '>',
+                'subject'   => $this->subjectLine,
                 'cc'        => $this->ccEmail,
                 'bcc'       => $this->bccEmail,
                 'replyto'   => $fullName . '<' . $emailAddress . '>',
-                'headline'  => 'You have a new ' . strtolower($this->postType),
-                'introcopy' => 'A ' . strtolower($this->postType) . ' was received from the website. Details are below:',
+                'headline'  => $this->emailHeadline,
+                'introcopy' => $this->emailText,
                 'leadData'  => $tableData
             ]
         );
@@ -269,11 +314,11 @@ class Leads
         $this->sendEmail(
             [
                 'to'        => $fullName . '<' . $emailAddress . '>',
-                'from'      => get_bloginfo() . ' <noreply@' . $this->domain . '>',
-                'subject'   => 'Your website submission has been received',
+                'from'      => $this->fromName . ' <'. $this->fromEmail . '>',
+                'subject'   => $this->receiptSubjectLine,
                 'bcc'       => $this->bccEmail,
-                'headline'  => 'Thank you',
-                'introcopy' => 'We\'ll review the information you\'ve provided and get back with you as soon as we can.',
+                'headline'  => $this->receiptHeadline,
+                'introcopy' => $this->receiptText,
                 'leadData'  => $tableData
             ]
         );
