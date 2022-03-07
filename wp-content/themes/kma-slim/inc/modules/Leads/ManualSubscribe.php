@@ -14,6 +14,10 @@ class ManualSubscribe extends Leads
     protected function showForm()
     {
         $form = file_get_contents(locate_template('template-parts/forms/subscribe-form.php'));
+        $form = str_replace('{{user-agent}}', $_SERVER['HTTP_USER_AGENT'], $form);
+		$form = str_replace('{{ip-address}}', parent::getIP(), $form);
+        $form = str_replace('{{referrer}}', (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null), $form);
+        
         $formSubmitted = (isset($_POST['sec-validation-feild']) ? ($_POST['sec-validation-feild'] == '' ? true : false) : false );
         ob_start();
         if($formSubmitted){

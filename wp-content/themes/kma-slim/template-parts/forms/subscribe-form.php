@@ -1,5 +1,8 @@
 <div class="subscribe-form">
     <form method="post" >
+        <input type="hidden" name="user_agent" value="{{user-agent}}" >
+        <input type="hidden" name="ip_address" value="{{ip-address}}" >
+        <input type="hidden" name="referrer" value="{{referrer}}" >
         <div class="columns is-multiline">
             <div class="column is-3">
                 <input type="text" name="first_name" class="input" placeholder="First Name" required>
