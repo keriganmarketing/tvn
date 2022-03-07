@@ -45,7 +45,7 @@ include(locate_template('template-parts/sections/top.php'));
                             <div class="new-article" >
                                 <p>
                                     <!-- <a href="<?php echo get_the_permalink($recent->ID); ?>"><?php echo get_the_title($recent->ID); ?>...<br> -->
-                                    <a href="https://www.youtube.com/watch?v=lkydb6wbMSQ">Early Detection of Chronic Kidney Disease<br>
+                                    <a href="https://www.youtube.com/watch?v=lkydb6wbMSQ" target="_blank" rel="noopener">Early Detection of Chronic Kidney Disease<br>
                                     <span>Watch this video</span></a>
                                 </p>
                             </div>
