@@ -164,6 +164,15 @@ class SocialSettingsPage
         );
 
         add_settings_field(
+            'tiktok', // ID
+            'TikTok', // Title
+            [ $this, 'tiktok_callback' ], // Callback
+            'social-setting-admin', // Page
+            'setting_section_id' // Section
+        );
+
+
+        add_settings_field(
             'pinterest', // ID
             'Pinterest', // Title
             [ $this, 'pinterest_callback' ], // Callback
@@ -248,6 +257,10 @@ class SocialSettingsPage
 
         if (isset($input['instagram'])) {
             $new_input['instagram'] = sanitize_text_field($input['instagram']);
+        }
+
+        if (isset($input['tiktok'])) {
+            $new_input['tiktok'] = sanitize_text_field($input['tiktok']);
         }
 
         if (isset($input['pinterest'])) {
@@ -353,6 +366,14 @@ class SocialSettingsPage
         printf(
             '<input class="form-control" type="text" id="instagram" name="social_option_name[instagram]" value="%s" />',
             isset($this->options['instagram']) ? esc_attr($this->options['instagram']) : ''
+        );
+    }
+
+    public function tiktok_callback()
+    {
+        printf(
+            '<input class="form-control" type="text" id="tiktok" name="social_option_name[tiktok]" value="%s" />',
+            isset($this->options['tiktok']) ? esc_attr($this->options['tiktok']) : ''
         );
     }
 
