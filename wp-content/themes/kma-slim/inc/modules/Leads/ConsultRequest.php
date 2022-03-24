@@ -13,7 +13,7 @@ class ConsultRequest extends Leads
     public    $bccEmail            = 'support@kerigan.com';
     public    $additionalFields    = ['message' => 'Message'];
     public    $shortcode           = 'consult-form';
-    public    $successMessage      = 'Thank you for requesting a virtual consultation with Dr. Rifai. Please download the <a href="https://thevirtualnephrologist.com/wp-content/uploads/2021/07/TVN-New-Patient-Packet-Complete.pdf">New Patient Packet file</a>. Once downloaded, please fill it out and fax to (850)914-3004 and then keep them safe as your copy. Once we receive your fax Dr. Rifai will contact you to set up your appointment.';
+    public    $successMessage      = 'Thank you for requesting a virtual consultation with Dr. Rifai. Please download the <a target="_blank" href="https://thevirtualnephrologist.com/wp-content/uploads/2021/07/TVN-New-Patient-Packet-Complete.pdf">New Patient Packet file</a>. Once downloaded, please fill it out and fax to (850)914-3004 and then keep them safe as your copy. Once we receive your fax Dr. Rifai will contact you to set up your appointment.';
     public    $formFileName        = 'consult-form';
     
     public    $fromName            = 'TVN Website';
@@ -25,7 +25,7 @@ class ConsultRequest extends Leads
 
     public    $receiptSubjectLine  = 'Thank you for your virtual consultation request';
     public    $receiptHeadline     = 'Your virtual consultation request has been received';
-    public    $receiptText         = '<p style="font-size:18px; color:black;>Thank you for requesting a virtual consultation with Dr. Rifai.</p><h2>Next Steps:</h2><p style="font-size:18px; color:black;">Please download the <a href="https://thevirtualnephrologist.com/wp-content/uploads/2021/07/TVN-New-Patient-Packet-Complete.pdf">New Patient Packet pdf file</a>. Once downloaded, fill out the information as complete as possible and fax to (850) 914-3004. Be sure to keep your copies safe for use as a reference/record.</p> <h2>What To Expect:</h2><p style="font-size:18px; color:black;">Once we receive your New Patient Packet via fax, we will review the information you have provided and contact you to schedule a consultation at a time convenient for you.</p><p style="font-size:18px; color:black;">The information you provided to us is:</p>';
+    public    $receiptText         = '<p style="font-size:18px; color:black;>Thank you for requesting a virtual consultation with Dr. Rifai.</p><h2>Next Steps:</h2><p style="font-size:18px; color:black;">Please download the <a target="_blank" href="https://thevirtualnephrologist.com/wp-content/uploads/2021/07/TVN-New-Patient-Packet-Complete.pdf">New Patient Packet pdf file</a>. Once downloaded, fill out the information as complete as possible and fax to (850) 914-3004. Be sure to keep your copies safe for use as a reference/record.</p> <h2>What To Expect:</h2><p style="font-size:18px; color:black;">Once we receive your New Patient Packet via fax, we will review the information you have provided and contact you to schedule a consultation at a time convenient for you.</p><p style="font-size:18px; color:black;">The information you provided to us is:</p>';
 
      /*
      * Validate certain data types on the backend
